@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어울림</title>
+    <link rel="stylesheet" href="styles/reset06.css">
+    <link rel="stylesheet" href="styles/style06.css">
+    <link rel="stylesheet" href="styles/swiper.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div class="header-top">
+        <span class="cta">숨은 지원금</span>
+        <span class="cta-strong">지금 확인하기</span>
+        <div class="arrow">></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <a href="index.html" class="title-icon">
+            <img src="img/title-icon.png" alt="어울림">
+        </a>
+        <div class="nav-items-wrapper">
+            <a href="index.html" class="nav-item">물품구매서비스</a>
+            <a href="index2.html" class="nav-item">휴대폰/IP</a>
+            <a href="index3.html" class="nav-item">인터넷/TV</a>
+            <a href="index4.html" class="nav-item">교육&엔터</a>
+            <a href="index5.html" class="nav-item">장애인 채용 컨설팅</a>
+            <a href="index6.html" class="nav-item">회사 소개</a>
+            <img src="img/login.png" alt="User Icon" class="icon">
+        </div>
+    </div>
+
+    <div class="infomation-main-banner">
+        <div class="education-banner-text">회사 소개</div>
+    </div>
+    <div class="information-container-box">
+        <h1 class="information-title">장애인표준사업장</h1>
+        <div class="information-underline"></div>
+        <p class="information-description">
+            장애인 표준사업장은 '장애인 고용촉진 및 직업 재활 법' 시행규칙 제3조에 따라 장애인 근로자 수가 10명 근무하고 있으며,
+            전체 상시 근로자의 30% 이상이 장애인이며, 상시 근로자의 15% (상시 근로자수에 따라 적용이 다름) 이상을 장애인으로
+            고용하고 있으며, '장애인·노인·임산부 등의 편의증진보장에 관한 법률'에 따른 편의시설을 갖추고,
+            최저임금법에 따른 최저임금액 이상의 임금을 지급할 것 등의 요건을 모두 갖춘 사업장을 말합니다.
+        </p>
+    </div>
+    <div class="information-image-box">
+        <h1 class="information-title">표준사업장 법정 정의</h1>
+        <div class="information-underline2"></div>
+        <p class="information-description2">
+            장애인 고용촉진 및 작업 재활 법 시행규칙 제3조의 기준을 준수하고 공단으로부터 인증을 받은 사업장을 말합니다.
+        </p>
+        <img src="img/61.png" alt="장애인 표준 사업장 관련 이미지" class="information-image">
+    </div>
+
+    <div class="footer2">
+        <div class="footer-container">
+            <img src="img/title-icon.png" alt="회사 로고" class="footer-logo">
+            <div class="footer-text">
+                <div class="footer-links-container">
+                    <div class="footer-link">회사소개</div>
+                    <div class="footer-link">공지사항</div>
+                    <div class="footer-link">이벤트</div>
+                    <div class="footer-link">사은품 지급 명단</div>
+                </div>
+                <div class="footer-links-container2">
+                    <div class="footer-link2">(주)에스에이코퍼레이션</div>
+                    <div class="footer-link2">사이트명 : 어울림 | 대표자 : 윤성훈</div>
+                    <div class="footer-link2">사업자등록번호 : 417-87-00266 | 통신판매업 :</div>
+                    <div class="footer-link2">
+                        대표번호 : 0000-0000 | 팩스 : 000-000-0000 |
+                        <span class="split-line">주소 : 부산광역시 동구 중앙대로 373-1(수정동)</span>
+                    </div>
+                    <div class="footer-link2">개인정보 책임관리자 :</div>
+                    <div class="footer-link2">고객센터 :</p>
+                    </div>
+                    <div class="footer-links-container3">
+                        <div class="footer-link3">개인정보 처리방침 서비스 이용약관 마케팅 정보 수신 동의</div>
+                        <div class="footer-link3">Copyright 2024 (주) 에스에이코퍼레이션 All rights reserved.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="consult-container">
+        <div class="kt-consult-box">
+            <h2 class="consult-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;쉽고 간편한 KT상담</h2>
+            <button class="consult-button blue">상담 문의 남기기</button>
+            <button class="consult-button yellow">실시간 카카오톡</button>
+            <div class="consult-image">
+                <!-- 이미지가 들어갈 자리 -->
+            </div>
+            <div class="consult-footer">고객센터 <strong>1899-9999</strong></div>
+            <button class="consult-arrow">></button>
+        </div>
+        <button class="show-arrow"><</button> <!-- 새로운 화살표 버튼 -->
+
+    </div>
+
+    <script>document.addEventListener("DOMContentLoaded", function () {
+        const consultBox = document.querySelector('.kt-consult-box');
+        const consultArrow = document.querySelector('.consult-arrow');
+        const showArrow = document.querySelector('.show-arrow');
+    
+        // 초기 상태: 컨설트 박스 보임, 새로운 화살표 숨김
+        consultArrow.addEventListener('click', () => {
+            consultBox.style.display = 'none';
+            showArrow.style.display = 'block';
+        });
+    
+        showArrow.addEventListener('click', () => {
+            consultBox.style.display = 'block';
+            showArrow.style.display = 'none';
+        });
+
+        
+    });
+    
+
+
+    </script>
+
+
+
+
+
+</body>

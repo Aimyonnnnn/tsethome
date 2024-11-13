@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 
 <body>
 
-    <!-- Header Section (Retained from existing structure) -->
+    <!-- Header Section -->
     <div class="header">
         <!-- Green Banner -->
         <div class="header-top">
@@ -27,31 +27,25 @@
             <a href="index.html" class="title-icon">
                 <img src="img/title-icon.png" alt="어울림">
             </a>
-            <!-- 아래 나머지 아이템을 감싸는 추가 컨테이너 -->
             <div class="nav-items-wrapper">
-                <a href="#" data-page="index.html" class="nav-item">물품구매서비스</a>
-                <a href="#" data-page="index2.html" class="nav-item">휴대폰/IP</a>
-                <a href="#" data-page="index3.html" class="nav-item">인터넷/TV</a>
-                <a href="#" data-page="index4.html" class="nav-item">교육&엔터</a>
-                <a href="#" data-page="index5.html" class="nav-item">장애인 채용 컨설팅</a>
+                <a href="index.html" class="nav-item">물품구매서비스</a>
+                <a href="index2.html" class="nav-item">휴대폰/IP</a>
+                <a href="index3.html" class="nav-item">인터넷/TV</a>
+                <a href="index4.html" class="nav-item">교육&엔터</a>
+                <a href="index5.html" class="nav-item">장애인 채용 컨설팅</a>
+                <a href="index6.html" class="nav-item">회사 소개</a>
                 <img src="img/login.png" alt="User Icon" class="icon">
-                </a>
             </div>
         </div>
 
-        <!-- Main Image Slider (Retained from existing structure) -->
-        <!-- Main Image Slider (Retained from existing structure) -->
+        <!-- Main Content Section -->
         <div id="content">
             <div class="slider">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide ss1">
-                        </div>
-                        <div class="swiper-slide ss2">
-                        </div>
-                        <div class="swiper-slide ss3">
-
-                        </div>
+                        <div class="swiper-slide ss1"></div>
+                        <div class="swiper-slide ss2"></div>
+                        <div class="swiper-slide ss3"></div>
                     </div>
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-prev"></div>
@@ -59,19 +53,13 @@
                 </div>
             </div>
 
-
-
-            <!-- Large Image Section (Retained from existing structure) -->
+            <!-- Additional Sections -->
             <div class="large-image-container">
                 <img src="img/44.png" alt="Large Image" class="large-image">
             </div>
-
-            <!-- Additional Image Section (Retained from existing structure) -->
             <div class="extra-image-container">
                 <img src="img/55.png" alt="Extra Image" class="extra-image">
             </div>
-
-            <!-- Question Section (Retained from existing structure) -->
             <div class="question-section">
                 <img src="img/6.png" alt="Question Mark" class="question-image">
                 <p class="question-text">무엇을 살 수 있나요?</p>
@@ -99,8 +87,6 @@
 
                     </div>
                 </div>
-
-                <!-- Text Section -->
                 <div class="text-section">
                     <p class="highlight-text">!! 무엇이든 구매가능 !!</p>
                     <div class="underline-large"></div>
@@ -108,7 +94,6 @@
                 </div>
             </div>
 
-            <!-- New Product Section -->
             <!-- Product Section -->
             <div class="shop">
                 <div class="container1">
@@ -159,6 +144,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="footer">
                 <div class="footer-container">
                     <img src="img/title-icon.png" alt="회사 로고" class="footer-logo">
@@ -187,79 +173,100 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="consult-container">
+                <div class="kt-consult-box">
+                    <h2 class="consult-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;쉽고 간편한 KT상담</h2>
+                    <button class="consult-button blue">상담 문의 남기기</button>
+                    <button class="consult-button yellow">실시간 카카오톡</button>
+                    <div class="consult-image">
+                        <!-- 이미지가 들어갈 자리 -->
+                    </div>
+                    <div class="consult-footer">고객센터 <strong>1899-9999</strong></div>
+                    <button class="consult-arrow">></button>
+                </div>
+                <button class="show-arrow"><</button> <!-- 새로운 화살표 버튼 -->
+        
+            </div>
+        
+            <script>document.addEventListener("DOMContentLoaded", function () {
+                const consultBox = document.querySelector('.kt-consult-box');
+                const consultArrow = document.querySelector('.consult-arrow');
+                const showArrow = document.querySelector('.show-arrow');
+            
+                // 초기 상태: 컨설트 박스 보임, 새로운 화살표 숨김
+                consultArrow.addEventListener('click', () => {
+                    consultBox.style.display = 'none';
+                    showArrow.style.display = 'block';
+                });
+            
+                showArrow.addEventListener('click', () => {
+                    consultBox.style.display = 'block';
+                    showArrow.style.display = 'none';
+                });
+        
+                
+            });
+            
+        
+        
+            </script>
+            
 
+            <!-- JavaScript -->
+            <script src="js/jquery.min_1.12.4.js"></script>
+            <script src="js/modernizr-custom.js"></script>
+            <script src="js/ie-checker.js"></script>
+            <script src="js/swiper.min.js"></script>
+            <script>
+                // Swiper 초기화
+                var mySwiper = new Swiper('.swiper-container', {
+                    loop: true,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        type: 'bullets',
+                    },
+                    autoplay: {
+                        delay: 1000,
+                    },
+                });
+            </script>
 
+            <script>
+                let bgCurrentIndex = 0;
+                const bgSlides = document.querySelectorAll('.newslider-wrapper .new-slide');
+                const bgTotalSlides = bgSlides.length;
+                const bgSlideWidth = 253 + 13; // Slide width + gap between slides
+                const bgSliderWrapper = document.querySelector('.newslider-wrapper');
 
+                // Duplicate slides to create seamless looping effect
+                bgSlides.forEach(slide => {
+                    const clone = slide.cloneNode(true);
+                    bgSliderWrapper.appendChild(clone);
+                });
 
+                function showNextBgSlide() {
+                    bgCurrentIndex++;
+                    bgSliderWrapper.style.transition = 'transform 1s ease-in-out';
+                    bgSliderWrapper.style.transform = `translateX(${-bgCurrentIndex * bgSlideWidth}px)`;
 
+                    // Move condition inside the function
+                    if (bgCurrentIndex >= bgTotalSlides) {
+                        setTimeout(() => {
+                            bgSliderWrapper.style.transition = 'none'; // Disable transition
+                            bgCurrentIndex = 0; // Reset index
+                            bgSliderWrapper.style.transform = `translateX(0px)`; // Reset position
+                        }, 1000); // Match transition duration
+                    }
+                }
 
-                <!-- JavaScript -->
+                setInterval(showNextBgSlide, 2000); // 2-second interval for background slider
+            </script>
 
-                <script src="js/jquery.min_1.12.4.js"></script>
-                <script src="js/modernizr-custom.js"></script>
-                <script src="js/ie-checker.js"></script>
-                <script src="js/swiper.min.js"></script>
-                <script>
-                    var mySwiper = new Swiper('.swiper-container', {
-                        loop: true,
-                        navigation: {
-                            nextEl: '.swiper-button-next',
-                            prevEl: '.swiper-button-prev',
-                        },
-                        pagination: {
-                            el: '.swiper-pagination',
-                            type: 'bullets',
-                        },
-                        autoplay: {
-                            delay: 1000,
-                        },
-                    })
-                </script>
-
-                <script src="js/common-slider.js"></script>
-
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        const navItems = document.querySelectorAll('.nav-item');
-                        const contentContainer = document.getElementById('content');
-
-                        navItems.forEach(item => {
-                            item.addEventListener('click', function (event) {
-                                event.preventDefault();
-                                const page = this.getAttribute('data-page');
-
-                                fetch(page)
-                                    .then(response => {
-                                        if (!response.ok) {
-                                            throw new Error(`HTTP error! status: ${response.status}`);
-                                        }
-                                        return response.text();
-                                    })
-                                    .then(data => {
-                                        // Extract content inside the content div
-                                        const tempDiv = document.createElement('div');
-                                        tempDiv.innerHTML = data;
-                                        const newContent = tempDiv.querySelector('#content').innerHTML;
-
-                                        contentContainer.innerHTML = newContent;
-
-                                        // Execute scripts manually after inserting new content
-                                        const scripts = tempDiv.querySelectorAll('script');
-                                        scripts.forEach(script => {
-                                            const newScript = document.createElement('script');
-                                            newScript.textContent = script.textContent;
-                                            document.body.appendChild(newScript);
-                                            newScript.remove(); // Optionally remove the script after execution
-                                        });
-                                    })
-                                    .catch(error => {
-                                        console.error('Error loading the page:', error);
-                                        contentContainer.innerHTML = '<p>페이지를 불러오는 데 문제가 발생했습니다.</p>';
-                                    });
-                            });
-                        });
-                    });
-                </script>
 
 </body>
 
