@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어울림</title>
+    <link rel="stylesheet" href="styles/reset016.css">
+    <link rel="stylesheet" href="styles/style06.css">
+    <link rel="stylesheet" href="styles/swiper.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+<body>
+    <div id="content">
+        <div class="slider">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide ss10"></div>
+                    <div class="swiper-slide ss11"></div>
+                    <div class="swiper-slide ss12"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <div class="education-menu-container">
+            <div class="education-menu active">
+                <span class="education-menu-title">&nbsp;(필수교육)</span>
+                <p class="education-menu-item">법정 의무 교육1</p>
+                <div class="education-menu-underline"></div>
+            </div>
+            <div class="education-menu active2">
+                <span class="education-menu-title">&nbsp;(직무별 의무교육)</span>
+                <p class="education-menu-item">법정 의무 교육2</p>
+                <div class="education-menu-underline"></div>
+            </div>
+
+            <div class="education-menu active">
+                <span class="education-menu-title" style="visibility: hidden;">(빈공간)</span>
+                <p class="education-menu-item">직무 교육</p>
+                <div class="education-menu-underline2"></div>
+            </div>
+
+            <div class="education-menu active">
+                <span class="education-menu-title" style="visibility: hidden;">(빈공간)</span>
+                <p class="education-menu-item">소양 교육</p>
+                <div class="education-menu-underline2"></div>
+            </div>
+
+            <div class="education-menu active">
+                <span class="education-menu-title" style="visibility: hidden;">(빈공간)</span>
+                <p class="education-menu-item">추천 행사</p>
+                <div class="education-menu-underline2"></div>
+            </div>
+        </div>
+
+        
+
+        <div class="education-image-section-container">
+            <div class="education-title-container">
+                <p class="education-subtitle">[필수교육]</p>
+        <h1 class="education-main-title">소양 교육 리스트</h1>
+            </div>
+            <div class="education-image-container">
+                <img src="img/41.svg" alt="Default Image" class="education-responsive-image" id="educationImage">
+            </div>
+        </div>
+
+        
+
+        
+        
+
+
+
+
+
+
+
+
+        <script src="js/jquery.min_1.12.4.js"></script>
+        <script src="js/modernizr-custom.js"></script>
+        <script src="js/ie-checker.js"></script>
+        <script src="js/swiper.min.js"></script>
+        <script src="js/education.js"></script>
+        <script>
+            var mySwiper = new Swiper('.swiper-container', {
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                },
+                autoplay: {
+                    delay: 1000,
+                },
+            })
+        </script>
+    </div>
+</body>
