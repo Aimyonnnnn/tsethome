@@ -1,0 +1,210 @@
+/**
+ * Swiper 4.5.0
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * http://www.idangero.us/swiper/
+ **/
+ .education-swiper-container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+.education-swiper-container-no-flexbox .education-swiper-slide {
+    float: left;
+}
+.education-swiper-container-vertical > .education-swiper-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.education-swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+.education-swiper-container-android .education-swiper-slide,
+.education-swiper-wrapper {
+    transform: translate3d(0px, 0, 0);
+}
+.education-swiper-container-multirow > .education-swiper-wrapper {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.education-swiper-container-free-mode > .education-swiper-wrapper {
+    transition-timing-function: ease-out;
+    margin: 0 auto;
+}
+.education-swiper-slide {
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    z-index: 5;
+}
+.education-swiper-slide .education-container {z-index: 20;}
+.education-swiper-slide:after {
+    content: ''; 
+    position: absolute; 
+    z-index: 2; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background: #000; 
+    opacity: .2;
+}
+.education-swiper-container2 .education-swiper-slide:after {
+    opacity: 0;
+}
+
+.education-swiper-slide-invisible-blank {
+    visibility: hidden;
+}
+/* Auto Height */
+.education-swiper-container-autoheight,
+.education-swiper-container-autoheight .education-swiper-slide {
+    height: auto;
+}
+.education-swiper-container-autoheight .education-swiper-wrapper {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    transition-property: height, -webkit-transform;
+    transition-property: transform, height;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.education-swiper-container-wp8-horizontal,
+.education-swiper-container-wp8-horizontal > .education-swiper-wrapper {
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+}
+.education-swiper-container-wp8-vertical,
+.education-swiper-container-wp8-vertical > .education-swiper-wrapper {
+    -ms-touch-action: pan-x;
+    touch-action: pan-x;
+}
+.education-swiper-button-prev,
+.education-swiper-button-next {
+    position: absolute;
+    top: 50%;
+    width: 27px;
+    height: 44px;
+    margin-top: -22px;
+    z-index: 10;
+    cursor: pointer;
+    background-size: 27px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.education-swiper-button-prev.education-swiper-button-disabled,
+.education-swiper-button-next.education-swiper-button-disabled {
+    opacity: 0.35;
+    cursor: auto;
+    pointer-events: none;
+}
+.education-swiper-button-prev,
+.education-swiper-container-rtl .education-swiper-button-next {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+    left: 16px;
+    right: auto;
+}
+.education-swiper-button-next,
+.education-swiper-container-rtl .education-swiper-button-prev {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+    right: 16px;
+    left: auto;
+}
+.education-swiper-button-lock {
+    display: none;
+}
+.education-swiper-pagination {
+    position: absolute;
+    text-align: center;
+    transition: 300ms opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+}
+.education-swiper-pagination.education-swiper-pagination-hidden {
+    opacity: 0;
+}
+
+/* Common Styles */
+.education-swiper-pagination-fraction,
+.education-swiper-pagination-custom,
+.education-swiper-container-horizontal > .education-swiper-pagination-bullets {
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+}
+/* Bullets */
+.education-swiper-pagination-bullets-dynamic {
+    overflow: hidden;
+    font-size: 0;
+}
+.education-swiper-pagination-bullets-dynamic .education-swiper-pagination-bullet {
+    transform: scale(0.33);
+    position: relative;
+}
+.education-swiper-pagination-bullets-dynamic .education-swiper-pagination-bullet-active {
+    transform: scale(1);
+}
+.education-swiper-pagination-bullets-dynamic .education-swiper-pagination-bullet-active-main {
+    transform: scale(1);
+}
+.education-swiper-pagination-bullets-dynamic .education-swiper-pagination-bullet-active-prev {
+    transform: scale(0.66);
+}
+.education-swiper-pagination-bullets-dynamic .education-swiper-pagination-bullet-active-prev-prev {
+    transform: scale(0.33);
+}
+.education-swiper-pagination-bullets-dynamic .education-swiper-pagination-bullet-active-next {
+    transform: scale(0.66);
+}
+.education-swiper-pagination-bullets-dynamic .education-swiper-pagination-bullet-active-next-next {
+    transform: scale(0.33);
+}
+.education-swiper-pagination-bullet {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #ccc;
+    opacity: 0.2;
+}
+button.education-swiper-pagination-bullet {
+    border: none;
+    margin: 0;
+    padding: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.education-swiper-pagination-clickable .education-swiper-pagination-bullet {
+    cursor: pointer;
+}
+.education-swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #fff;
+}
+.education-swiper-container-horizontal > .education-swiper-pagination-bullets .education-swiper-pagination-bullet {
+    margin: 0 4px;
+}
