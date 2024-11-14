@@ -103,6 +103,59 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const navBar = document.querySelector('.nav-bar');
+            let navBarPosition = navBar.offsetTop;
+
+            // 햄버거 메뉴 위치 조정 함수
+            function adjustMenuPosition() {
+                const headerTop = document.querySelector('.header-top');
+                if (window.innerWidth > 1920) {
+                    const headerLeft = headerTop.getBoundingClientRect().left;
+                    menuToggle.style.left = `${headerLeft + 40}px`;
+                } else {
+                    menuToggle.style.left = '40px';
+                }
+            }
+
+            // 스크롤 이벤트 처리
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > (navBarPosition + navBar.offsetHeight)) {
+                    menuToggle.style.display = 'block';
+                    adjustMenuPosition(); // 스크롤 시 위치 조정
+                } else {
+                    menuToggle.style.display = 'none';
+                    mobileMenu.classList.remove('active');
+                }
+            });
+
+            // 리사이즈 이벤트에 대한 위치 조정
+            window.addEventListener('resize', adjustMenuPosition);
+
+            // 초기 위치 설정
+            adjustMenuPosition();
+
+            // 메뉴 토글
+            menuToggle.addEventListener('click', function () {
+                mobileMenu.classList.toggle('active');
+                if (mobileMenu.classList.contains('active')) {
+                    mobileMenu.style.display = 'block';
+                }
+            });
+
+            // 메뉴 외부 클릭시 닫기
+            document.addEventListener('click', function (event) {
+                if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+
+
+    </script>
 
 
 
