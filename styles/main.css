@@ -248,6 +248,7 @@
         align-items: center;
         background: #F0F0F0;
     }
+
     .nav-item {
         margin: 4px;
     }
@@ -1383,12 +1384,132 @@
     color: #000000;
 }
 
+/* 1919px ~ 1100px 스타일 */
+@media screen and (max-width: 1919px) {
+    .promo-container {
+        width: 1100px;
+    }
+}
+
+/* 1100px ~ 800px 스타일 */
+@media screen and (max-width: 1100px) {
+    .promo-container {
+        width: calc(100% - 40px);
+        /* 좌우 20px 여백 */
+        margin: 0 auto;
+        height: auto;
+    }
+
+    /* 원래 크기 유지하되 wrapper의 gap만 조절 */
+    .promo-wrapper {
+        gap: calc(20px * ((100vw - 800px) / 300));
+        /* 1100px에서 800px로 갈수록 gap이 20px에서 0px로 줄어듦 */
+        padding: 50px 0 100px;
+    }
+}
+
+/* 800px 이하 스타일 */
+@media screen and (max-width: 800px) {
+    .promo-container {
+        width: calc(100% - 40px);
+    }
+
+    .promo-container .promo-title {
+        width: calc(100vw - 40px);
+        max-width: 760px;
+        font-size: 60px;
+        padding-top: calc(100px * ((100vw - 40px) / 760));
+        line-height: 1.2;
+        margin: 0 auto;
+        white-space: nowrap;
+    }
+
+    .promo-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 50px 0;
+    }
+
+    .promo-wrapper .promo-item {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .promo-wrapper .promo-item .promo-card {
+        width: min(760px, calc(100vw - 40px));
+        height: min(500px, calc(500px * ((100vw - 40px) / 760)));
+        margin: 0 auto;
+    }
+
+    .promo-wrapper .promo-item .promo-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        display: block;
+    }
+
+    .circle {
+        width: calc(64px * (100vw / 800));
+        height: calc(64px * (100vw / 800));
+        font-size: calc(20px * (100vw / 800));
+    }
+
+    .promo-card-text h3 {
+        font-size: calc(35px * (100vw / 800));
+    }
+
+    .promo-card-text p {
+        font-size: calc(16px * (100vw / 800));
+        padding-top: calc(5px * (100vw / 800));
+    }
+
+    .custom-button {
+        width: calc(196px * (100vw / 800));
+        height: calc(29px * (100vw / 800));
+        font-size: calc(16px * (100vw / 800));
+        margin-top: calc(15px * (100vw / 800));
+    }
+
+    .promo-subtitle {
+        font-size: calc(25px * (100vw / 800));
+        padding-top: calc(38px * (100vw / 800));
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .promo-container .promo-title {
+        font-size: 50px;
+    }
+}
+
+/* 500px 이하 스타일 */
+@media screen and (max-width: 500px) {
+    .promo-container .promo-title {
+        font-size: 40px;
+    }
+
+    .promo-subtitle,
+    .promo-subtitle-hi {
+        font-size: 20px !important;
+    }
+
+
+}
+
+@media screen and (max-width: 424px) {
+    .promo-container .promo-title {
+        font-size: 30px;
+    }
+}
+
+
 .review-section {
-    width: 1920px;
-    height: 673px;
+    width: 100vw;
+    max-width: 1920px;
+    height: auto;
     margin: 0 auto;
     background-color: #00a19a;
-    /* 배경색 예시, 필요시 변경 가능 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1399,7 +1520,6 @@
     display: flex;
     justify-content: space-between;
     max-width: 1980px;
-    /* 필요에 따라 조정 */
     overflow: hidden;
 }
 
@@ -1435,8 +1555,8 @@
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    /* 전체적으로 왼쪽 정렬 */
-    margin-right: 30px;
+    margin: 20px 15px;
+    /* 위아래 여백 20px, 좌우 여백 15px 설정 */
 }
 
 .review-header {
@@ -1516,9 +1636,161 @@
     /* 호버 시 배경색 전환 (밝은 노란색) */
 }
 
+/* 1919px ~ 1100px */
+@media (max-width: 1919px) and (min-width: 1100px) {
+    .review-section {
+        width: 100vw;
+        /* 전체 뷰포트 너비를 사용하여 배경색이 잘리지 않게 설정 */
+        padding: 0 5vw;
+        /* 좌우에 적당한 여백을 추가하여 콘텐츠 정렬 */
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .review-container {
+        justify-content: space-between;
+        /* 좌우 여백 유지 */
+        width: 100%;
+    }
+
+    .review-text {
+        font-size: calc(14px + 0.5vw);
+        /* 폰트 크기를 뷰포트에 비례하여 조정 */
+    }
+}
+
+/* 1100px 이하 */
+@media (max-width: 1100px) {
+    .review-section {
+        width: 90vw;
+        max-width: none;
+        margin: 0 auto;
+    }
+
+    .review-container {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-box {
+        width: 90vw;
+        /* 뷰포트 너비에 비례하여 조정 */
+        max-width: 586px;
+        height: 285px;
+        /* 디폴트 높이 유지 */
+        margin: 20px auto;
+        /* 위아래 여백 유지, 좌우 중앙 정렬 */
+    }
+
+    .review-box:nth-child(1),
+    .review-box:nth-child(3) {
+        display: none;
+        /* 두 번째 박스만 보이도록 설정 */
+    }
+
+    .review-box-title {
+        font-size: calc(20px + 2vw);
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .review-description-container {
+        width: 80vw;
+        max-width: 500px;
+    }
+
+    .review-button {
+        width: 80vw;
+        max-width: 677px;
+        height: auto;
+        font-size: calc(20px + 1.5vw);
+        margin-bottom: 30px;
+    }
+
+    .review-text {
+        font-size: calc(14px + 1vw);
+        /* 텍스트 크기를 뷰포트에 비례하여 조정 */
+    }
+
+    .review-title {
+        font-size: calc(12px + 1vw);
+        /* 제목 크기 조정 */
+    }
+
+    .review-subtitle {
+        font-size: calc(16px + 1vw);
+        /* 부제목 크기 조정 */
+    }
+
+    .review-description {
+        font-size: calc(12px + 0.8vw);
+        /* 설명 텍스트 크기 조정 */
+    }
+}
+
+/* 800px 이하 */
+/* 800px 이하 */
+@media (max-width: 800px) {
+    .review-box {
+        width: calc(100% - 60px);
+        /* 좌우 여백(30px * 2)을 제외한 가로 크기 설정 */
+        margin: 20px auto;
+        /* 위아래 여백 유지 및 가운데 정렬 */
+        padding: 0 20px;
+        /* 기존 패딩 유지 */
+        box-sizing: border-box;
+        /* padding과 border가 전체 너비에 포함되도록 설정 */
+    }
+
+    .review-box:nth-child(1) {
+        display: block;
+        /* 첫 번째 박스를 보이도록 설정 */
+    }
+
+    .review-box:nth-child(n+2) {
+        display: none;
+        /* 두 번째 이후 박스를 숨기도록 설정 */
+    }
+
+    .review-description-container {
+        width: calc(100% - 20px);
+        /* 리뷰 박스의 가로 크기에서 20px을 뺀 값으로 설정 */
+        max-width: calc(586px - 20px);
+        /* 최대값 설정 */
+    }
+
+    .white-text,
+    .yellow-text {
+        font-size: 50px;
+    }
+
+    .review-title {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .white-text,
+    .yellow-text {
+        font-size: 35px;
+    }
+
+    .review-title {
+        font-size: 14px;
+        padding-top: 20px;
+    }
+
+}
+
+
+/* 기본 스타일 */
+/* 기본 스타일 */
 .kt-main-container {
-    width: 1980px;
-    height: 2000px;
+    max-width: 1980px;
+    max-height: 2000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -1539,8 +1811,6 @@
     padding-bottom: 61px;
 }
 
-
-
 .kt-oval-box {
     width: 676px;
     height: 132px;
@@ -1555,106 +1825,48 @@
     margin: 0 auto;
     position: relative;
     margin-bottom: 126px;
-    /* 추가된 마진 */
-
 }
 
 .kt-oval-box::after {
     content: '';
     width: 0;
     height: 0;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-top: 30px solid #414C94;
+    border-left: calc(30px * var(--scale-factor, 1)) solid transparent;
+    border-right: calc(30px * var(--scale-factor, 1)) solid transparent;
+    border-top: calc(30px * var(--scale-factor, 1)) solid #414C94;
     position: absolute;
-    bottom: -15px;
-    left: calc(50% - 30px);
-
-}
-
-.kt-photo-section22 {
-    margin: 40px 0;
-    position: relative;
-    width: 975px;
-    height: 322px;
-    margin: 0 auto;
-    margin-bottom: 60px;
+    bottom: calc(-15px * var(--scale-factor, 1));
+    left: calc(50% - (30px * var(--scale-factor, 1)));
 }
 
 .kt-photo-section {
     position: relative;
-    /* 자식 요소의 절대 위치를 위한 기준 */
     width: 975px;
     height: 322px;
     margin: 0 auto;
-    border-radius: 10px;
-    /* 포토섹션 박스의 라운딩 처리가 필요한 경우 */
-    overflow: visible;
-    /* 자식 요소가 넘치는 경우 숨김 */
     margin-bottom: 60px;
-
 }
 
 .kt-label {
     position: absolute;
     top: -30px;
-    /* 포토섹션 박스의 상단에 위치 */
     width: 153px;
     height: 42px;
     background-color: #414C94;
-    /* 예시 색상 */
     color: #ffffff;
     font-family: 'Paperlogy-7', sans-serif;
     font-size: 16px;
-    /* 텍스트 크기는 필요에 따라 조정 */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    /* 모서리 둥글게 처리 */
     z-index: 1;
-    /* 포토섹션 위에 위치하도록 설정 */
-}
-
-
-.kt-photo-section:last-child {
-    margin-bottom: 0;
-    /* 마지막 섹션의 여백 제거 */
 }
 
 .kt-photo-image {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-}
-
-.kt-corner-label {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 153px;
-    height: 42px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    font-family: 'Paperlogy-4', sans-serif;
-}
-
-.kt-oval-info-box {
-    width: 708px;
-    height: 110.72px;
-    background-color: #ffffff;
-    border-radius: 55.36px;
-    margin: 20px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Paperlogy-7', sans-serif;
-    font-size: 60px;
-    color: #000000;
 }
 
 .kt-cta-button {
@@ -1680,9 +1892,142 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+/* 1100px 이하 */
+@media (max-width: 1100px) {
+    .kt-main-container {
+        width: 90vw;
+        max-width: none;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kt-main-title {
+        font-size: calc(16px + 2vw);
+        padding-top: 60px;
+        text-align: center;
+    }
+
+    .kt-sub-title {
+        font-size: calc(30px + 3vw);
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    /* kt-photo-section만 화면 비율에 맞게 크기 조정 */
+    .kt-photo-section {
+        width: 90vw;
+        max-width: 975px;
+        height: auto;
+        margin: 30px auto;
+    }
+
+    .kt-oval-box {
+        width: 40vw;  /* 화면 비율에 맞게 너비 조정 */
+        height: 60px; /* 고정된 높이 */
+        font-size: calc(14px + 2vw); /* 화면에 맞춰 글자 크기 조정 */
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+}
+
+    
+    .kt-oval-box::after {
+        display: none;
+    }
+
+    .kt-label {
+        font-size: calc(3px + 1vw);
+        width: auto;;
+        height: auto;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+
+    .kt-photo-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .kt-cta-button {
+        width: 708px;
+        height: 110.2px;
+        font-size: 40px;
+        margin: 40px auto;
+    }
+}
+
+/* 800px 이하 */
+@media (max-width: 800px) {
+    .kt-main-container {
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    .kt-main-title {
+        font-size: calc(12px + 4vw);
+        padding-top: 40px;
+        text-align: center;
+    }
+
+    .kt-sub-title {
+        font-size: calc(20px + 5vw);
+        padding-bottom: 1px;
+        text-align: center;
+    }
+
+    .kt-oval-box {
+            width: 50vw;  /* 화면 비율에 맞게 너비 조정 */
+            height: 30px; /* 고정된 높이 */
+            font-size: calc(14px + 2vw); /* 화면에 맞춰 글자 크기 조정 */
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px
+    }
+
+    .kt-photo-section {
+        width: 60vw;
+        max-width: 975px;
+        height: auto;
+        margin: 30px auto;
+    }
+
+    .kt-label {
+        font-size: calc(3px + 1vw);
+        width: auto;;
+        height: auto;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+
+    .kt-photo-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .kt-cta-button {
+        width: 60vw;
+        max-width: 708px;
+        font-size: calc(12px + 3vw);
+        height: auto;
+        margin: 30px auto;
+    }
+}
+
+
+
 .sale-special-models-container {
-    width: 1920px;
-    height: 2082px;
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    /* 필요 시 높이를 auto로 설정 */
     margin: 0 auto;
     box-sizing: border-box;
     display: flex;
@@ -1740,6 +2085,61 @@
     /* 그림자 강도 증가 */
     background-color: #FFD700;
     /* 호버 시 배경색 전환 (밝은 노란색) */
+}
+
+@media (max-width: 1919px) and (min-width: 1100px) {
+    .sale-special-models-container {
+        width: 90vw;
+        /* 뷰포트 너비의 90%로 설정하여 좌우만 잘리게 조정 */
+        max-width: 1100px;
+        /* 최대 너비 설정 */
+        margin: 0 auto;
+    }
+}
+
+/* 1100px 이하 */
+@media (max-width: 1100px) {
+    .sale-special-models-container {
+        width: 90vw;
+        /* 뷰포트 너비의 90%로 설정하여 비율대로 줄어듦 */
+        max-width: none;
+        /* 최대 크기 제한 해제 */
+        margin: 0 auto;
+    }
+
+    .sale-special-title {
+        font-size: calc(30px + 4vw);
+        /* 폰트 크기를 뷰포트에 비례하여 조정 */
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .sale-image-section {
+        gap: calc(20px + 2vw);
+        /* 이미지 간격을 뷰포트 크기에 비례하여 조정 */
+    }
+
+    .sale-model-image {
+        width: 80vw;
+        /* 뷰포트 너비에 비례하여 조정 */
+        max-width: 669px;
+        /* 최대 크기 제한 */
+        height: auto;
+        /* 비율 유지 */
+    }
+
+    .sale-consult-button {
+        width: 80vw;
+        /* 뷰포트 너비에 비례하여 조정 */
+        max-width: 708px;
+        /* 최대 크기 제한 */
+        height: auto;
+        /* 비율 유지 */
+        font-size: calc(20px + 2vw);
+        /* 폰트 크기를 뷰포트에 비례하여 조정 */
+        margin: 40px auto;
+        /* 상하 여백 조정 */
+    }
 }
 
 .footer2 {
@@ -2674,7 +3074,7 @@
         display: none;
     }
 
- 
+
     /* header-top 안의 icon 스타일 */
     /* header-top 안의 icon 위치 조정 */
     .header-top .icon {
