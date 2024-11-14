@@ -20,8 +20,20 @@
             <span class="cta">숨은 지원금</span>
             <span class="cta-strong">지금 확인하기</span>
             <div class="arrow">></div>
+            <img src="img/login.png" alt="User Icon" class="icon"> <!-- 추가 -->
+
         </div>
 
+        <img src="img/menuicon.png" alt="Menu" class="menu-icon" id="menuToggle">
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-items">
+                <a href="index2.html" class="mobile-menu-item">휴대폰/IP</a>
+                <a href="index3.html" class="mobile-menu-item">인터넷/TV</a>
+                <a href="index4.html" class="mobile-menu-item">교육&엔터</a>
+                <a href="index5.html" class="mobile-menu-item">장애인 채용 컨설팅</a>
+                <a href="index6.html" class="mobile-menu-item">회사 소개</a>
+            </div>
+        </div>
 
 
         <!-- Navigation Bar -->
@@ -179,10 +191,47 @@
                 <button class="consult-arrow">></button>
             </div>
             <button class="show-arrow">
-                << /button> <!-- 새로운 화살표 버튼 -->
+                <</button> <!-- 새로운 화살표 버튼 -->
 
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const navBar = document.querySelector('.nav-bar');
+            let navBarPosition = navBar.offsetTop;
+
+            // 스크롤 이벤트 처리
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > (navBarPosition + navBar.offsetHeight)) {
+                    menuToggle.style.display = 'block';
+                } else {
+                    menuToggle.style.display = 'none';
+                    mobileMenu.classList.remove('active');
+                }
+            });
+
+            // 메뉴 토글
+            menuToggle.addEventListener('click', function () {
+                mobileMenu.classList.toggle('active');
+                if (mobileMenu.classList.contains('active')) {
+                    mobileMenu.style.display = 'block';
+                }
+            });
+
+            // 메뉴 외부 클릭시 닫기
+            document.addEventListener('click', function (event) {
+                if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+
+
+
+    </script>
 
     <script>document.addEventListener("DOMContentLoaded", function () {
             const consultBox = document.querySelector('.kt-consult-box');

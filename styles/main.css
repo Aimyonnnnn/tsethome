@@ -2163,12 +2163,12 @@
 
 
 .image-container {
-    width: 1920px;
-    height: 619px;
-    margin: 0 auto;
-    /* 가로 중앙 정렬 */
-    overflow: hidden;
-    /* 필요한 경우 자식 요소의 넘침 방지 */
+    width: 100%; /* 화면 크기에 맞게 가로폭을 100%로 설정 */
+    height: auto; /* 자동으로 세로 크기 조정 */
+    max-width: 1920px; /* 최대 가로 크기를 1920px로 제한 */
+    max-height: 619px; /* 최대 세로 크기를 619px로 제한 */
+    margin: 0 auto; /* 가로 중앙 정렬 */
+    overflow: hidden; /* 자식 요소의 넘침을 숨김 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2176,24 +2176,22 @@
 
 .contained-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* 이미지가 박스를 꽉 채우도록 설정 */
+    height: auto; /* 이미지의 비율을 유지하면서 자동으로 세로 크기 조정 */
+    object-fit: contain; /* 이미지 비율을 유지하면서 가로/세로 크기 맞추기 */
 }
 
 
 .shared-internet-tv-container {
-    width: 1920px;
-    height: 1730px;
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
     margin: 0 auto;
-    /* 중앙 정렬 */
     padding: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #13AFA4;
-
 }
 
 .shared-main-text {
@@ -2215,39 +2213,29 @@
     color: #FFFFFF;
 }
 
-
 .shared-underline {
     width: 100%;
     max-width: 508px;
     height: 7px;
     background-color: #FDE500;
     margin: 10px 0 38px 0;
-    /* 위아래 여백 조정 */
-}
-
-.shared-image-box {
-    width: 994px;
-    height: 373px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    /* 이미지와 버튼 사이 간격 */
 }
 
 .shared-combined-container {
     position: relative;
     width: 994px;
-    height: 413px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 994/413;
     overflow: hidden;
     border-radius: 10px;
     margin-bottom: 57px;
-    /* 각 컨테이너 간격 */
 }
 
 .shared-main-image {
-    width: 994px;
-    height: 373px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 994/373;
     object-fit: cover;
     display: block;
 }
@@ -2255,7 +2243,7 @@
 .shared-button-overlay {
     position: absolute;
     bottom: 0;
-    width: 994px;
+    width: 100%;
     height: 80px;
     background-color: #C69C6D;
     display: flex;
@@ -2264,8 +2252,8 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     outline: none;
-    /* 테두리 제거 */
     border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .shared-button-text {
@@ -2274,92 +2262,136 @@
     color: #603813;
 }
 
-.shared-button-overlay {
-    position: absolute;
-    bottom: 0;
-    width: 994px;
-    height: 80px;
-    background-color: #C69C6D;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    outline: none;
-    /* 테두리 제거 */
-    border: none;
-    /* 불필요한 경계 제거 */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    /* 부드러운 전환 효과 */
-}
-
 .shared-button-overlay:hover {
     background-color: #A67C52;
-    /* 배경색을 약간 어둡게 변경 */
     color: #fff;
-    /* 텍스트 색상을 흰색으로 변경 */
 }
 
 .shared-button-overlay:hover .shared-button-text {
-    font-family: 'Paperlogy-5', sans-serif;
-    font-size: 30px;
     color: #ffffff;
-    /* 텍스트 색상을 흰색으로 설정 */
 }
 
+/* 1100px 이하 반응형 스타일 */
+@media screen and (max-width: 1100px) {
+    .shared-main-text,
+    .highlight-yellow,
+    .highlight-white {
+        font-size: calc(60px * 0.8);
+    }
+
+    .shared-combined-container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .shared-button-overlay {
+        height: calc(80px * 0.8);
+    }
+
+    .shared-button-text {
+        font-size: calc(25px * 0.8);
+    }
+
+    .shared-underline {
+        max-width: 90%;
+        height: 5px;
+    }
+}
+
+/* 768px 이하 추가 반응형 스타일 */
+@media screen and (max-width: 768px) {
+    .shared-main-text,
+    .highlight-yellow,
+    .highlight-white {
+        font-size: calc(60px * 0.6);
+    }
+
+    .shared-button-overlay {
+        height: calc(90px * 0.6);
+    }
+
+    .shared-button-text {
+        font-size: calc(30px * 0.6);
+    }
+
+    .shared-underline {
+        height: 4px;
+    }
+}
+
+/* 600px 이하 추가 반응형 스타일 */
+@media screen and (max-width: 600px) {
+    
+    .shared-button-overlay {
+        height: calc(68px * 0.6);
+    }
+}
+
+/* 425px 이하 추가 반응형 스타일 */
+@media screen and (max-width: 425px) {
+    
+    .shared-button-overlay {
+        height: calc(50px * 0.6);
+    }
+}
+
+/* 첫 번째 컨테이너 */
 .custom-outer-container {
-    width: 1920px;
-    height: 1170px;
+    width: 100%; /* 화면 크기에 맞게 너비 100% */
+    height: auto; /* 세로는 자동으로 조정 */
+    max-width: 1920px; /* 최대 너비를 1920px로 제한 */
+    max-height: 1170px; /* 최대 높이를 1170px로 제한 */
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    /* 필요에 따라 배경색을 설정하세요 */
     margin: 0 auto;
     /* 필요 시 가운데 정렬 */
 }
 
 .custom-inner-container {
-    width: 711px;
-    height: 1030px;
+    width: 37%; /* 화면 비율에 맞춰 너비를 설정 */
+    height: auto; /* 세로는 비율에 맞게 자동 조정 */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .custom-inner-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    /* 이미지가 부모 요소에 맞춰져 잘림 없이 표시됨 */
+    width: 100%; /* 너비 100% */
+    height: auto; /* 세로 자동 조정 */
+    object-fit: contain; /* 비율을 유지하며 부모 요소에 맞춰 조정 */
 }
 
+/* 두 번째 컨테이너 */
 .custom-outer-container2 {
-    width: 1920px;
-    height: 2004px;
+    width: 100%; /* 화면 크기에 맞게 너비 100% */
+    height: auto; /* 세로는 자동으로 조정 */
+    max-width: 1920px; /* 최대 너비를 1920px로 제한 */
+    max-height: 2004px; /* 최대 높이를 2004px로 제한 */
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #F5F5F5;
-    /* 필요에 따라 배경색을 설정하세요 */
     margin: 0 auto;
     /* 필요 시 가운데 정렬 */
 }
 
 .custom-inner-container2 {
-    width: 752px;
-    height: 1578px;
+    width: 37%; /* 화면 비율에 맞춰 너비를 설정 */
+    height: auto; /* 세로는 비율에 맞게 자동 조정 */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .custom-inner-image2 {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    /* 이미지가 부모 요소에 맞춰져 잘림 없이 표시됨 */
+    width: 100%; /* 너비 100% */
+    height: auto; /* 세로 자동 조정 */
+    object-fit: contain; /* 비율을 유지하며 부모 요소에 맞춰 조정 */
 }
+
 
 
 .custom-banner {
@@ -2381,7 +2413,6 @@
     transform: translateX(-50%);
     z-index: 1000;
     overflow: visible;
-    /* 추가 */
 }
 
 .custom-text-container {
@@ -2450,6 +2481,75 @@
 
 .custom-button.secondary:hover {
     background-color: #e6f7f6;
+}
+
+@media screen and (max-width: 1568px) {
+    .custom-banner {
+        height: 9.75vw; /* 153/1568 * 100 */
+        padding: 0 14vw; /* 220/1568 * 100 */
+        border-top-left-radius: 5.1vw; /* 80/1568 * 100 */
+        border-top-right-radius: 5.1vw;
+    }
+
+    .custom-text {
+        font-size: 1.6vw; /* 25/1568 * 100 */
+    }
+
+    .custom-phone-number {
+        font-size: 3.5vw; /* 55/1568 * 100 */
+        margin: 0.32vw 0 0; /* 5/1568 * 100 */
+    }
+
+    .custom-button-container {
+        padding-right: 14vw;
+        gap: 0.64vw;
+    }
+
+    .custom-button,
+    .custom-button.secondary {
+        width: 17.3vw; /* 272/1568 * 100 */
+        height: 3.2vw; /* 50/1568 * 100 */
+        font-size: 1.91vw; /* 30/1568 * 100 */
+        padding: 0.64vw 1.28vw; /* 10/1568 * 100, 20/1568 * 100 */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .custom-banner {
+        padding: 0 5vw;
+        height: auto;
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .custom-text-container {
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .custom-button-container {
+        padding-right: 0;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .custom-button,
+    .custom-button.secondary {
+        width: 90%;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .custom-text {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .custom-phone-number {
+        font-size: 24px;
+    }
 }
 
 
@@ -2569,19 +2669,19 @@
 
 
 .education-main-banner {
-    height: 600px;
+    width: 100%;
     max-width: 1920px;
+    height: 600px;
+    min-height: 600px;
     margin: 0 auto;
-    /* 가로 가운데 정렬 */
     background: url('../img/main10.png') no-repeat center center;
     background-size: cover;
-    /* 이미지가 컨테이너에 맞게 비율을 무시하고 꽉 채우도록 조정 */
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
-
 
 .education-banner-text {
     font-family: 'Paperlogy-7';
@@ -2597,6 +2697,22 @@
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     /* 검정 그림자 */
 }
+
+@media screen and (max-width: 1920px) {
+    .education-main-banner {
+        height: 31.25vw; /* 600px/1920px * 100 = 31.25% */
+        min-height: unset;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .education-banner-text {
+        font-size: calc(40px * 0.7); /* 800px 이하에서 0.7배로 축소 */
+    }
+}
+
+
+
 
 .education-list {
     width: 968px;
