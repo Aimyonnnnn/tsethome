@@ -51,9 +51,10 @@
 }
 
 /* Main container */
+
 .header {
     width: 1920px;
-    height: 81px;
+    height: auto;
     max-width: 1920px;
     margin: 0 auto;
 }
@@ -1691,6 +1692,7 @@
     box-sizing: border-box;
 
 }
+
 
 
 .image-container {
