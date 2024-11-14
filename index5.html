@@ -7,8 +7,7 @@
     <title>어울림</title>
     <link rel="stylesheet" href="styles/reset06.css">
     <link rel="stylesheet" href="styles/style06.css">
-    <link rel="stylesheet" href="styles/swiper.css">
-    <link rel="stylesheet" href="styles/main.css?v=2">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
@@ -18,7 +17,21 @@
             <span class="cta">숨은 지원금</span>
             <span class="cta-strong">지금 확인하기</span>
             <div class="arrow">></div>
+            <img src="img/login.png" alt="User Icon" class="icon"> <!-- 추가 -->
+
         </div>
+
+        <img src="img/menuicon.png" alt="Menu" class="menu-icon" id="menuToggle">
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-items">
+                <a href="index2.html" class="mobile-menu-item">휴대폰/IP</a>
+                <a href="index3.html" class="mobile-menu-item">인터넷/TV</a>
+                <a href="index4.html" class="mobile-menu-item">교육&엔터</a>
+                <a href="index5.html" class="mobile-menu-item">장애인 채용 컨설팅</a>
+                <a href="index6.html" class="mobile-menu-item">회사 소개</a>
+            </div>
+        </div>
+
 
         <!-- Navigation Bar -->
         <div class="nav-bar">
@@ -38,17 +51,17 @@
 
 
         <div class="education-main-banner">
-            <div class="education-banner-text">장애인 채용 컨설팅</div>
+            <div class="education-banner-text">장애인 표준 사업장 교육</div>
         </div>
         <div class="education-menu-container">
             <div class="education-menu active">
-                <span class="education-menu-title">&nbsp;(필수교육)</span>
-                <p class="education-menu-item" data-target="list1">법정 의무 교육1</p>
+                <span class="education-menu-title">(필수교육)</span>
+                <p class="education-menu-item" data-target="list1">법정 의무 교육</p>
                 <div class="education-menu-underline"></div>
             </div>
             <div class="education-menu active2">
-                <span class="education-menu-title">&nbsp;(직무별 의무교육)</span>
-                <p class="education-menu-item" data-target="list2">법정 의무 교육2</p>
+                <span class="education-menu-title">(직무별 의무교육)</span>
+                <p class="education-menu-item" data-target="list2">법정 의무 교육</p>
                 <div class="education-menu-underline"></div>
             </div>
             <div class="education-menu active">
@@ -63,53 +76,60 @@
             </div>
             <div class="education-menu active">
                 <span class="education-menu-title" style="visibility: hidden;">(빈공간)</span>
-                <p class="education-menu-item" data-target="list5">추천 행사</p>
-                <div class="education-menu-underline2"></div>
+                <p class="education-menu-item" data-target="list5">기업 행사 대행</p>
+                <div class="education-menu-underline"></div>
             </div>
         </div>
+        <!-- 리스트 컨테이너들 -->
         <div class="list-container" id="list1">
             <div class="education-title-container">
-                <p class="education-subtitle">[필수교육]</p>
-                <h1 class="education-main-title">법정 의무 교육1</h1>
+                <div class="education-subtitle">[필수 공통 교육]</div>
+                <div class="education-main-title">법정 의무 교육</div>
             </div>
             <div class="education-list">
                 <img src="img/41.svg" alt="Education Image" class="education-image">
             </div>
         </div>
+
         <div class="list-container" id="list2">
             <div class="education-title-container">
-                <p class="education-subtitle">[필수교육]</p>
-                <h1 class="education-main-title">법정 의무 교육2</h1>
+                <div class="education-subtitle">[직무별 의무 교육]</div>
+                <div class="education-main-title">법정 의무 교육</div>
             </div>
             <div class="education-list">
                 <img src="img/42.svg" alt="Education Image" class="education-image">
             </div>
         </div>
+
         <div class="list-container" id="list3">
             <div class="education-title-container">
-                <p class="education-subtitle">[선택교육]</p>
-                <h1 class="education-main-title">직무 교육</h1>
+                <div class="education-subtitle">[선택교육]</div>
+                <div class="education-main-title">직무 교육</div>
             </div>
             <div class="education-list">
                 <img src="img/43.svg" alt="Education Image" class="education-image">
             </div>
         </div>
+
         <div class="list-container" id="list4">
             <div class="education-title-container">
-                <p class="education-subtitle">[선택교육]</p>
-                <h1 class="education-main-title">소양 교육</h1>
+                <div class="education-subtitle">[선택교육]</div>
+                <div class="education-main-title">소양 교육</div>
             </div>
             <div class="education-list">
-                <img src="img/41.svg" alt="Education Image" class="education-image">
+                <img src="img/44.svg" alt="Education Image" class="education-image">
             </div>
         </div>
+
         <div class="list-container" id="list5">
             <div class="education-title-container">
-                <p class="education-subtitle">[추천교육]</p>
-                <h1 class="education-main-title">추천행사</h1>
+                <div class="education-subtitle">[추천교육]</div>
+                <div class="education-main-title">기업 행사 대행</div>
             </div>
             <div class="education-list">
-                <img src="img/42.svg" alt="Education Image" class="education-image">
+                <img src="img/45.svg" alt="Education Image" class="education-image">
+                <img src="img/451.svg" alt="Education Image" class="education-image">
+
             </div>
         </div>
 
@@ -148,115 +168,174 @@
 
     <script>
         window.onload = function () {
-            // 모든 리스트 컨테이너와 메뉴 아이템을 선택
-            const listContainers = document.querySelectorAll(".list-container");
-            const menuItems = document.querySelectorAll(".education-menu-item");
-            let currentIndex = 0;
+    const listContainers = document.querySelectorAll(".list-container");
+    const menuItems = document.querySelectorAll(".education-menu-item");
+    const banner = document.querySelector('.education-main-banner');
+    const bannerText = document.querySelector('.education-banner-text');
+    let currentIndex = 0;
 
-            // 초기 상태 설정 함수
-            function initializePage() {
-                if (listContainers.length > 0 && menuItems.length > 0) {
-                    // 모든 리스트 컨테이너 숨기기, 첫 번째만 보이기
-                    listContainers.forEach((container, index) => {
-                        container.style.display = index === 0 ? "block" : "none";
-                    });
-                    // 모든 메뉴 아이템에서 active 클래스 제거하고 첫 번째 항목에만 추가
-                    menuItems.forEach(item => item.parentElement.classList.remove("active"));
-                    menuItems[0].parentElement.classList.add("active");
-                    console.log("페이지 초기화 완료"); // 초기화 확인용 로그
+    // 배너 업데이트 함수
+    function updateBanner(index) {
+        if (index === 4) { // 리스트5 (인덱스 4)
+            banner.style.backgroundImage = 'url("img/main12.png")';
+            bannerText.textContent = '기업 행사 대행';
+        } else {
+            banner.style.backgroundImage = 'url("img/main10.png")';
+            bannerText.textContent = '장애인 표준 사업장 교육';
+        }
+    }
+
+    // 초기 상태 설정
+    function initializePage() {
+        if (listContainers.length > 0 && menuItems.length > 0) {
+            listContainers.forEach((container, index) => {
+                container.style.display = index === 0 ? "block" : "none";
+            });
+            menuItems.forEach(item => item.closest('.education-menu').classList.remove("active"));
+            menuItems[0].closest('.education-menu').classList.add("active");
+            updateBanner(0); // 초기 배너 설정
+        }
+    }
+
+    initializePage();
+
+    // 메뉴 아이템 이벤트 리스너
+    menuItems.forEach((item, index) => {
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
+            showContainerByIndex(index);
+        });
+
+        item.addEventListener("mouseenter", (e) => {
+            e.preventDefault();
+            showContainerByIndex(index);
+        });
+
+        item.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            showContainerByIndex(index);
+        });
+    });
+
+    // 컨테이너 표시 함수
+    function showContainerByIndex(index) {
+        listContainers.forEach((container, i) => {
+            container.style.display = i === index ? "block" : "none";
+        });
+        currentIndex = index;
+
+        menuItems.forEach(item => item.closest('.education-menu').classList.remove("active"));
+        menuItems[index].closest('.education-menu').classList.add("active");
+        
+        updateBanner(index); // 배너 업데이트
+    }
+
+    // 드래그/터치 이벤트 처리
+    let startX = 0;
+    let isDragging = false;
+
+    listContainers.forEach(container => {
+        container.addEventListener("mousedown", (e) => {
+            startX = e.clientX;
+            isDragging = true;
+        });
+
+        container.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+            const currentX = e.clientX;
+            const difference = startX - currentX;
+            if (Math.abs(difference) > 50) {
+                if (difference > 0) showNext();
+                else showPrevious();
+                isDragging = false;
+            }
+        });
+
+        container.addEventListener("mouseup", () => {
+            isDragging = false;
+        });
+
+        container.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        container.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
+            const currentX = e.touches[0].clientX;
+            const difference = startX - currentX;
+            if (Math.abs(difference) > 50) {
+                if (difference > 0) showNext();
+                else showPrevious();
+                isDragging = false;
+            }
+        });
+
+        container.addEventListener("touchend", () => {
+            isDragging = false;
+        });
+    });
+
+    function showNext() {
+        currentIndex = (currentIndex + 1) % listContainers.length;
+        updateContainerDisplay();
+    }
+
+    function showPrevious() {
+        currentIndex = (currentIndex - 1 + listContainers.length) % listContainers.length;
+        updateContainerDisplay();
+    }
+
+    function updateContainerDisplay() {
+        listContainers.forEach((container, index) => {
+            container.style.display = index === currentIndex ? "block" : "none";
+        });
+        menuItems.forEach((item, index) => {
+            const menuElement = item.closest('.education-menu');
+            if (menuElement) {
+                menuElement.classList.toggle("active", index === currentIndex);
+            }
+        });
+        updateBanner(currentIndex); // 배너 업데이트 추가
+    }
+};
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const navBar = document.querySelector('.nav-bar');
+            let navBarPosition = navBar.offsetTop;
+
+            // 스크롤 이벤트 처리
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > (navBarPosition + navBar.offsetHeight)) {
+                    menuToggle.style.display = 'block';
                 } else {
-                    console.error("리스트 컨테이너나 메뉴 항목이 존재하지 않습니다.");
+                    menuToggle.style.display = 'none';
+                    mobileMenu.classList.remove('active');
                 }
-            }
-
-            initializePage(); // 페이지 초기화
-
-            // 메뉴 아이템 이벤트 설정
-            menuItems.forEach((item, index) => {
-                item.addEventListener("click", () => showContainerByIndex(index));
-                item.addEventListener("mouseenter", () => showContainerByIndex(index));
-                item.addEventListener("touchstart", () => showContainerByIndex(index));
             });
 
-            // 특정 컨테이너 보이기 함수
-            function showContainerByIndex(index) {
-                listContainers.forEach((container, i) => {
-                    container.style.display = i === index ? "block" : "none";
-                });
-                currentIndex = index;
-                // 모든 메뉴 아이템에서 active 클래스 제거 후 현재 인덱스에 추가
-                menuItems.forEach(item => item.parentElement.classList.remove("active"));
-                menuItems[index].parentElement.classList.add("active");
-            }
-
-            // 드래그 및 터치 이벤트 처리
-            let startX = 0;
-            let isDragging = false;
-
-            listContainers.forEach(container => {
-                container.addEventListener("mousedown", (e) => {
-                    startX = e.clientX;
-                    isDragging = true;
-                });
-
-                container.addEventListener("mousemove", (e) => {
-                    if (!isDragging) return;
-                    const currentX = e.clientX;
-                    const difference = startX - currentX;
-                    if (Math.abs(difference) > 50) {
-                        if (difference > 0) showNext();
-                        else showPrevious();
-                        isDragging = false;
-                    }
-                });
-
-                container.addEventListener("mouseup", () => {
-                    isDragging = false;
-                });
-
-                container.addEventListener("touchstart", (e) => {
-                    startX = e.touches[0].clientX;
-                    isDragging = true;
-                });
-
-                container.addEventListener("touchmove", (e) => {
-                    if (!isDragging) return;
-                    const currentX = e.touches[0].clientX;
-                    const difference = startX - currentX;
-                    if (Math.abs(difference) > 50) {
-                        if (difference > 0) showNext();
-                        else showPrevious();
-                        isDragging = false;
-                    }
-                });
-
-                container.addEventListener("touchend", () => {
-                    isDragging = false;
-                });
+            // 메뉴 토글
+            menuToggle.addEventListener('click', function () {
+                mobileMenu.classList.toggle('active');
+                if (mobileMenu.classList.contains('active')) {
+                    mobileMenu.style.display = 'block';
+                }
             });
 
-            // 다음 컨테이너로 이동
-            function showNext() {
-                currentIndex = (currentIndex + 1) % listContainers.length;
-                updateContainerDisplay();
-            }
+            // 메뉴 외부 클릭시 닫기
+            document.addEventListener('click', function (event) {
+                if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
 
-            // 이전 컨테이너로 이동
-            function showPrevious() {
-                currentIndex = (currentIndex - 1 + listContainers.length) % listContainers.length;
-                updateContainerDisplay();
-            }
 
-            // 컨테이너 및 메뉴 아이템 업데이트
-            function updateContainerDisplay() {
-                listContainers.forEach((container, index) => {
-                    container.style.display = index === currentIndex ? "block" : "none";
-                });
-                menuItems.forEach((item, index) => {
-                    item.parentElement.classList.toggle("active", index === currentIndex);
-                });
-            }
-        };
+
     </script>
 
 
