@@ -295,7 +295,7 @@
 
 @media (max-width: 480px) {
     .nav-items-wrapper .nav-item {
-        font-size: 9px;
+        font-size: 8px;
         /* 원하는 글자 크기로 설정 */
     }
 
@@ -1360,8 +1360,9 @@
 }
 
 .custom-button {
-    width: 196px;
-    height: 29px;
+    max-width: 410px;
+    max-height: 50px;
+    height: 20px;
     background-color: #D9D9D9;
     /* 회색 배경 */
     color: #4A4A4A;
@@ -1455,31 +1456,69 @@
         font-size: calc(20px * (100vw / 800));
     }
 
-    .promo-card-text h3 {
-        font-size: calc(35px * (100vw / 800));
-    }
+
 
     .promo-card-text p {
         font-size: calc(16px * (100vw / 800));
         padding-top: calc(5px * (100vw / 800));
     }
 
-    .custom-button {
-        width: calc(196px * (100vw / 800));
-        height: calc(29px * (100vw / 800));
-        font-size: calc(16px * (100vw / 800));
-        margin-top: calc(15px * (100vw / 800));
-    }
+
 
     .promo-subtitle {
         font-size: calc(25px * (100vw / 800));
         padding-top: calc(38px * (100vw / 800));
     }
+
+    .promo-card-text {
+        width: 100%;
+        /* promo-card-text 관련 미디어쿼리 스타일 모두 제거 */
+    }
+    
+    .promo-card-text h3,
+    .promo-card-text p,
+    .promo-card-text .custom-button {
+        /* 원본 스타일 강제 적용 */
+        font-size: 16px !important;
+        transform: none !important;
+        width: auto !important;
+        height: auto !important;
+    }
+    
+    /* h3 원본 크기 유지 */
+    .promo-card-text h3 {
+        font-size: 35px !important;
+    }
+
+    
+
+
 }
 
 @media screen and (max-width: 620px) {
     .promo-container .promo-title {
         font-size: 50px;
+    }
+
+
+    .promo-card-text {
+        width: 100%;
+        /* promo-card-text 관련 미디어쿼리 스타일 모두 제거 */
+    }
+
+    .promo-card-text h3,
+    .promo-card-text p,
+    .promo-card-text .custom-button {
+        /* 원본 스타일 강제 적용 */
+        font-size: 16px !important;
+        transform: none !important;
+        width: auto !important;
+        height: auto !important;
+    }
+
+    /* h3 원본 크기 유지 */
+    .promo-card-text h3 {
+        font-size: 35px !important;
     }
 }
 
@@ -1493,6 +1532,8 @@
     .promo-subtitle-hi {
         font-size: 20px !important;
     }
+
+
 
 
 }
@@ -1924,24 +1965,28 @@
     }
 
     .kt-oval-box {
-        width: 40vw;  /* 화면 비율에 맞게 너비 조정 */
-        height: 60px; /* 고정된 높이 */
-        font-size: calc(14px + 2vw); /* 화면에 맞춰 글자 크기 조정 */
+        width: 40vw;
+        /* 화면 비율에 맞게 너비 조정 */
+        height: 60px;
+        /* 고정된 높이 */
+        font-size: calc(14px + 2vw);
+        /* 화면에 맞춰 글자 크기 조정 */
         margin: 20px auto;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 30px;
-}
+    }
 
-    
+
     .kt-oval-box::after {
         display: none;
     }
 
     .kt-label {
         font-size: calc(3px + 1vw);
-        width: auto;;
+        width: auto;
+        ;
         height: auto;
         padding: 5px 10px;
         border-radius: 10px;
@@ -1981,14 +2026,17 @@
     }
 
     .kt-oval-box {
-            width: 50vw;  /* 화면 비율에 맞게 너비 조정 */
-            height: 30px; /* 고정된 높이 */
-            font-size: calc(14px + 2vw); /* 화면에 맞춰 글자 크기 조정 */
-            margin: 20px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px
+        width: 50vw;
+        /* 화면 비율에 맞게 너비 조정 */
+        height: 30px;
+        /* 고정된 높이 */
+        font-size: calc(14px + 2vw);
+        /* 화면에 맞춰 글자 크기 조정 */
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px
     }
 
     .kt-photo-section {
@@ -2000,7 +2048,8 @@
 
     .kt-label {
         font-size: calc(3px + 1vw);
-        width: auto;;
+        width: auto;
+        ;
         height: auto;
         padding: 5px 10px;
         border-radius: 10px;
@@ -2163,12 +2212,18 @@
 
 
 .image-container {
-    width: 100%; /* 화면 크기에 맞게 가로폭을 100%로 설정 */
-    height: auto; /* 자동으로 세로 크기 조정 */
-    max-width: 1920px; /* 최대 가로 크기를 1920px로 제한 */
-    max-height: 619px; /* 최대 세로 크기를 619px로 제한 */
-    margin: 0 auto; /* 가로 중앙 정렬 */
-    overflow: hidden; /* 자식 요소의 넘침을 숨김 */
+    width: 100%;
+    /* 화면 크기에 맞게 가로폭을 100%로 설정 */
+    height: auto;
+    /* 자동으로 세로 크기 조정 */
+    max-width: 1920px;
+    /* 최대 가로 크기를 1920px로 제한 */
+    max-height: 619px;
+    /* 최대 세로 크기를 619px로 제한 */
+    margin: 0 auto;
+    /* 가로 중앙 정렬 */
+    overflow: hidden;
+    /* 자식 요소의 넘침을 숨김 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2176,8 +2231,10 @@
 
 .contained-image {
     width: 100%;
-    height: auto; /* 이미지의 비율을 유지하면서 자동으로 세로 크기 조정 */
-    object-fit: contain; /* 이미지 비율을 유지하면서 가로/세로 크기 맞추기 */
+    height: auto;
+    /* 이미지의 비율을 유지하면서 자동으로 세로 크기 조정 */
+    object-fit: contain;
+    /* 이미지 비율을 유지하면서 가로/세로 크기 맞추기 */
 }
 
 
@@ -2273,6 +2330,7 @@
 
 /* 1100px 이하 반응형 스타일 */
 @media screen and (max-width: 1100px) {
+
     .shared-main-text,
     .highlight-yellow,
     .highlight-white {
@@ -2301,6 +2359,7 @@
 
 /* 768px 이하 추가 반응형 스타일 */
 @media screen and (max-width: 768px) {
+
     .shared-main-text,
     .highlight-yellow,
     .highlight-white {
@@ -2322,7 +2381,7 @@
 
 /* 600px 이하 추가 반응형 스타일 */
 @media screen and (max-width: 600px) {
-    
+
     .shared-button-overlay {
         height: calc(68px * 0.6);
     }
@@ -2330,7 +2389,7 @@
 
 /* 425px 이하 추가 반응형 스타일 */
 @media screen and (max-width: 425px) {
-    
+
     .shared-button-overlay {
         height: calc(50px * 0.6);
     }
@@ -2338,10 +2397,14 @@
 
 /* 첫 번째 컨테이너 */
 .custom-outer-container {
-    width: 100%; /* 화면 크기에 맞게 너비 100% */
-    height: auto; /* 세로는 자동으로 조정 */
-    max-width: 1920px; /* 최대 너비를 1920px로 제한 */
-    max-height: 1170px; /* 최대 높이를 1170px로 제한 */
+    width: 100%;
+    /* 화면 크기에 맞게 너비 100% */
+    height: auto;
+    /* 세로는 자동으로 조정 */
+    max-width: 1920px;
+    /* 최대 너비를 1920px로 제한 */
+    max-height: 1170px;
+    /* 최대 높이를 1170px로 제한 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2351,25 +2414,34 @@
 }
 
 .custom-inner-container {
-    width: 37%; /* 화면 비율에 맞춰 너비를 설정 */
-    height: auto; /* 세로는 비율에 맞게 자동 조정 */
+    width: 37%;
+    /* 화면 비율에 맞춰 너비를 설정 */
+    height: auto;
+    /* 세로는 비율에 맞게 자동 조정 */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .custom-inner-image {
-    width: 100%; /* 너비 100% */
-    height: auto; /* 세로 자동 조정 */
-    object-fit: contain; /* 비율을 유지하며 부모 요소에 맞춰 조정 */
+    width: 100%;
+    /* 너비 100% */
+    height: auto;
+    /* 세로 자동 조정 */
+    object-fit: contain;
+    /* 비율을 유지하며 부모 요소에 맞춰 조정 */
 }
 
 /* 두 번째 컨테이너 */
 .custom-outer-container2 {
-    width: 100%; /* 화면 크기에 맞게 너비 100% */
-    height: auto; /* 세로는 자동으로 조정 */
-    max-width: 1920px; /* 최대 너비를 1920px로 제한 */
-    max-height: 2004px; /* 최대 높이를 2004px로 제한 */
+    width: 100%;
+    /* 화면 크기에 맞게 너비 100% */
+    height: auto;
+    /* 세로는 자동으로 조정 */
+    max-width: 1920px;
+    /* 최대 너비를 1920px로 제한 */
+    max-height: 2004px;
+    /* 최대 높이를 2004px로 제한 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2379,17 +2451,22 @@
 }
 
 .custom-inner-container2 {
-    width: 37%; /* 화면 비율에 맞춰 너비를 설정 */
-    height: auto; /* 세로는 비율에 맞게 자동 조정 */
+    width: 37%;
+    /* 화면 비율에 맞춰 너비를 설정 */
+    height: auto;
+    /* 세로는 비율에 맞게 자동 조정 */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .custom-inner-image2 {
-    width: 100%; /* 너비 100% */
-    height: auto; /* 세로 자동 조정 */
-    object-fit: contain; /* 비율을 유지하며 부모 요소에 맞춰 조정 */
+    width: 100%;
+    /* 너비 100% */
+    height: auto;
+    /* 세로 자동 조정 */
+    object-fit: contain;
+    /* 비율을 유지하며 부모 요소에 맞춰 조정 */
 }
 
 
@@ -2452,7 +2529,7 @@
 }
 
 .custom-button {
-    width: 272px;
+    width: 372px;
     height: 50px;
     padding: 10px 20px;
     border: 2px solid #ffffff;
@@ -2471,7 +2548,7 @@
 }
 
 .custom-button.secondary {
-    width: 272px;
+    width: 372px;
     height: 50px;
     background-color: #ffffff;
     color: #16635E;
@@ -2485,19 +2562,25 @@
 
 @media screen and (max-width: 1568px) {
     .custom-banner {
-        height: 9.75vw; /* 153/1568 * 100 */
-        padding: 0 14vw; /* 220/1568 * 100 */
-        border-top-left-radius: 5.1vw; /* 80/1568 * 100 */
+        height: 9.75vw;
+        /* 153/1568 * 100 */
+        padding: 0 14vw;
+        /* 220/1568 * 100 */
+        border-top-left-radius: 5.1vw;
+        /* 80/1568 * 100 */
         border-top-right-radius: 5.1vw;
     }
 
     .custom-text {
-        font-size: 1.6vw; /* 25/1568 * 100 */
+        font-size: 1.6vw;
+        /* 25/1568 * 100 */
     }
 
     .custom-phone-number {
-        font-size: 3.5vw; /* 55/1568 * 100 */
-        margin: 0.32vw 0 0; /* 5/1568 * 100 */
+        font-size: 3vw;
+        /* 55/1568 * 100 */
+        margin: 0.32vw 0 0;
+        /* 5/1568 * 100 */
     }
 
     .custom-button-container {
@@ -2507,48 +2590,65 @@
 
     .custom-button,
     .custom-button.secondary {
-        width: 17.3vw; /* 272/1568 * 100 */
-        height: 3.2vw; /* 50/1568 * 100 */
-        font-size: 1.91vw; /* 30/1568 * 100 */
-        padding: 0.64vw 1.28vw; /* 10/1568 * 100, 20/1568 * 100 */
+        width: 24.3vw;
+        /* 272/1568 * 100 */
+        height: 3.2vw;
+        /* 50/1568 * 100 */
+        font-size: 1.91vw;
+        /* 30/1568 * 100 */
+        padding: 0.64vw 1.28vw;
+        /* 10/1568 * 100, 20/1568 * 100 */
     }
 }
 
 @media screen and (max-width: 800px) {
     .custom-banner {
-        padding: 0 5vw;
+        padding: 10px 5vw;
         height: auto;
+        min-height: 120px;
+        width: 90%;
         flex-direction: column;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
     }
 
     .custom-text-container {
         align-items: center;
-        margin-bottom: 15px;
+        justify-content: center;
+        margin-bottom: 2px;
+        width: 100%;
+        text-align: center;
     }
 
     .custom-button-container {
         padding-right: 0;
         flex-direction: column;
-        gap: 10px;
+        gap: 3px;
         width: 100%;
+        align-items: center;
+        justify-content: center;
     }
 
     .custom-button,
     .custom-button.secondary {
         width: 90%;
-        height: 40px;
+        height: 35px;
         font-size: 16px;
+        margin: 2px 0;
+        text-align: center;
     }
 
     .custom-text {
         font-size: 16px;
         text-align: center;
+        margin-bottom: 2px;
     }
 
     .custom-phone-number {
         font-size: 24px;
+        margin-bottom: 2px;
+        text-align: center;
     }
 }
 
@@ -2577,7 +2677,7 @@
     color: #333;
     font-family: 'Paperlogy-5', sans-serif;
     font-size: 16px;
-    text-align: left;
+    text-align: center;
     width: 100%;
     position: relative;
     /* 추가 */
@@ -2629,6 +2729,109 @@
     /* 텍스트와 밑줄 사이의 간격 */
 }
 
+@media screen and (max-width: 1920px) {
+    .education-main-banner {
+        height: 31.25vw;
+        /* 600/1920 * 100 */
+        min-height: unset;
+    }
+}
+
+/* 1100px 이하 반응형 */
+@media screen and (max-width: 1100px) {
+    .education-banner-text {
+        font-size: calc(60px * 0.8);
+    }
+
+    .education-menu-container {
+        gap: calc(40px * 0.8);
+        padding-top: calc(70px * 0.8);
+    }
+
+    .education-menu-title {
+        font-size: calc(16px * 0.8);
+    }
+
+    .education-menu-item {
+        font-size: calc(27px * 0.8);
+    }
+
+    .education-menu-underline {
+        width: calc(174.62px * 0.8);
+    }
+
+    .education-menu-underline2 {
+        width: calc(114.62px * 0.8);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .education-banner-text {
+        font-size: calc(50px * 0.8);
+    }
+
+    .education-menu-container {
+        gap: calc(30px * 0.8);
+        padding-top: calc(70px * 0.8);
+    }
+
+    .education-menu-title {
+        font-size: calc(20px * 0.8);
+    }
+
+    .education-menu-item {
+        font-size: calc(20px * 0.8);
+    }
+
+    .education-menu-underline {
+        width: calc(120px * 0.8);
+    }
+
+    .education-menu-underline2 {
+        width: calc(90px * 0.8);
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .education-banner-text {
+        font-size: calc(20px * 0.8);
+    }
+
+    .education-menu-container {
+        gap: calc(30px * 0.8);
+        padding-top: calc(70px * 0.8);
+    }
+
+    .education-menu-title {
+        font-size: calc(10px * 0.8);
+    }
+
+    .education-menu-item {
+        font-size: calc(12px * 0.8);
+    }
+
+    .education-menu-underline {
+        width: calc(70px * 0.8);
+    }
+
+    .education-menu-underline2 {
+        width: calc(60px * 0.8);
+    }
+
+    .education-subtitle {
+        font-size: calc(30px * 0.6) !important;
+    }
+
+    .education-main-title {
+        font-size: calc(60px * 0.6) !important;
+    }
+
+    .education-title-container {
+        padding: 10px;
+        /* 기존 70px에서 줄임 */
+    }
+
+}
 
 .education-title-container {
     display: flex;
@@ -2639,32 +2842,24 @@
     max-width: 1920px;
     margin: 0 auto;
     padding: 70px;
-    /* 상하 여백 설정 */
-
-
 }
 
 .education-subtitle {
     font-family: 'Paperlogy-4', sans-serif;
-    /* 필요시 변경 가능 */
     font-size: 24px;
-    /* 서브타이틀 크기 */
     color: #333936;
-    /* 서브타이틀 색상 */
     margin: 0;
-    padding: 5px 0;
+    padding: 0;
+    line-height: 1;
 }
 
 .education-main-title {
     font-family: 'Paperlogy-7', sans-serif;
-    /* 메인 타이틀 폰트 */
     font-size: 60px;
-    /* 메인 타이틀 크기 */
     color: #006C67;
-    /* 메인 타이틀 색상 */
     margin: 0;
-    padding: 10px 0;
-    /* 상하 여백 설정 */
+    padding: 0;
+    line-height: 1.2;
 }
 
 
@@ -2680,7 +2875,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .education-banner-text {
@@ -2700,14 +2895,16 @@
 
 @media screen and (max-width: 1920px) {
     .education-main-banner {
-        height: 31.25vw; /* 600px/1920px * 100 = 31.25% */
+        height: 31.25vw;
+        /* 600px/1920px * 100 = 31.25% */
         min-height: unset;
     }
 }
 
 @media screen and (max-width: 800px) {
     .education-banner-text {
-        font-size: calc(40px * 0.7); /* 800px 이하에서 0.7배로 축소 */
+        font-size: calc(40px * 0.7);
+        /* 800px 이하에서 0.7배로 축소 */
     }
 }
 
@@ -2715,17 +2912,58 @@
 
 
 .education-list {
-    width: 968px;
-    height: 460px;
+    width: 100%;
+    /* 화면 크기에 맞게 너비 100%로 설정 */
+    max-width: 968px;
+    /* 최대 너비를 968px로 설정 */
+    height: auto;
+    /* 세로 크기는 자동으로 조정 */
     margin: 0 auto;
-    /* 선택 사항: 가운데 정렬 */
+    /* 가운데 정렬 */
     display: flex;
-    /* 자식 요소 중앙 배치 */
     align-items: center;
     justify-content: center;
 }
 
+#list5 .education-list {
+    flex-direction: column;
+    /* 이미지를 세로로 배치 */
+    align-items: center;
+    /* 가운데 정렬 */
+}
 
+#list5 .education-list img {
+    width: 100%;
+    /* 이미지 너비 100%로 설정 */
+    height: auto;
+    /* 비율에 맞게 세로 크기 자동 조정 */
+    margin-bottom: 50px;
+    /* 이미지 간의 간격을 50px로 설정 */
+}
+
+/* 리스트 3번 */
+#list3 .education-subtitle {
+    visibility: hidden;
+    /* 글자는 숨기고, 공간은 차지하도록 설정 */
+}
+
+/* 리스트 4번 */
+#list4 .education-subtitle {
+    visibility: hidden;
+    /* 글자는 숨기고, 공간은 차지하도록 설정 */
+}
+
+/* 리스트 5번 */
+#list5 .education-subtitle {
+    visibility: hidden;
+    /* 글자는 숨기고, 공간은 차지하도록 설정 */
+}
+
+/* 마지막 이미지에 여백을 없애기 */
+#list5 .education-list img:last-child {
+    margin-bottom: 0;
+    /* 마지막 이미지의 아래 여백 제거 */
+}
 
 /* 기존 hover 스타일 */
 .education-menu:hover .education-menu-title,
@@ -2821,13 +3059,12 @@
 }
 
 .information-main-banner {
-    height: 600px;
+    width: 100%;
     max-width: 1920px;
+    height: 600px;
     margin: 0 auto;
-    /* 가로 가운데 정렬 */
     background: url('../img/main11.png') no-repeat center center;
     background-size: cover;
-    /* 이미지가 컨테이너에 맞게 비율을 무시하고 꽉 채우도록 조정 */
     position: relative;
     display: flex;
     align-items: center;
@@ -2835,7 +3072,8 @@
 }
 
 .information-container-box {
-    width: 1920px;
+    width: 100%;
+    max-width: 1920px;
     height: 328px;
     margin: 0 auto;
     display: flex;
@@ -2843,11 +3081,8 @@
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
-    /* 배경색은 필요에 따라 조정 */
     box-sizing: border-box;
     padding: 40px 0;
-    /* 상하 여백 추가 */
-
 }
 
 .information-title {
@@ -2855,32 +3090,37 @@
     font-size: 48px;
     font-weight: bold;
     color: #0B8E85;
-    /* 제목 색상 설정 */
-    margin-bottom: px;
+    text-align: center;
+    /* 추가 */
+
 }
 
-.information-underline {
-    width: 398px;
+.information-underline3 {
+    width: 330px;
     height: 6px;
-    background-color: #008080;
-    /* 언더라인 색상 */
+    background-color: #0B8E85 !important;
+    /* 빨간색으로 변경 */
+    border: 3px solid #0B8E85 !important;
+    /* 테두리 추가 */
+    margin: 0 auto;
     margin-bottom: 44px;
+    display: block;
 }
+
 
 .information-description {
     font-family: 'Pretendard-Light';
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
     color: #000000;
-    /* 글자 색상 설정 */
     line-height: 1.5;
     max-width: 992px;
-    /* 텍스트 최대 너비 제한 */
     padding-bottom: 75px;
 }
 
 .information-image-box {
-    width: 1920px;
+    width: 100%;
+    max-width: 1920px;
     height: 723px;
     margin: 0 auto;
     display: flex;
@@ -2888,39 +3128,120 @@
     align-items: center;
     justify-content: center;
     background-color: #F5F5F5;
-    /* 배경색은 필요에 따라 조정 */
     box-sizing: border-box;
-
 }
 
 .information-image {
     width: 1029px;
+    max-width: 100%;
     height: 388px;
     object-fit: contain;
-    /* 이미지 비율 유지 */
     margin: 0 auto;
     padding-bottom: 60px;
-
 }
 
 .information-descriptions {
     font-family: 'Pretendard-Light';
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
     color: #000000;
-    /* 글자 색상 설정 */
     line-height: 1.5;
     max-width: 992px;
-    /* 텍스트 최대 너비 제한 */
     padding-bottom: 50px;
 }
 
 .information-underlines {
-    width: 438px;
+    width: 400px;
     height: 6px;
-    background-color: #008080;
-    /* 언더라인 색상 */
+    background-color: #0B8E85;
     margin-bottom: 44px;
+}
+
+/* 1920px - 1100px 반응형 */
+@media screen and (max-width: 1920px) {
+    .information-main-banner {
+        height: 31.25vw;
+    }
+}
+
+/* 1100px 이하 반응형 */
+@media screen and (max-width: 1100px) {
+    .information-container-box {
+        height: calc(328px * 0.8);
+        padding: calc(40px * 0.8) 0;
+    }
+
+    .information-title {
+        font-size: calc(48px * 0.8);
+    }
+
+    .information-underline3 {
+        width: calc(398px * 0.7);
+        height: calc(5px * 0.8);
+        margin-bottom: calc(44px * 0.8);
+    }
+
+    .information-description {
+        font-size: calc(20px * 0.8);
+        padding-bottom: calc(75px * 0.8);
+        max-width: calc(992px * 0.8);
+    }
+
+    .information-image-box {
+        height: calc(723px * 0.8);
+    }
+
+    .information-image {
+        width: calc(1029px * 0.8);
+        height: calc(388px * 0.8);
+        padding-bottom: calc(60px * 0.8);
+    }
+
+    .information-descriptions {
+        font-size: calc(20px * 0.8);
+        padding-bottom: calc(50px * 0.8);
+        max-width: calc(992px * 0.8);
+    }
+
+    .information-underlines {
+        width: calc(438px * 0.75);
+        height: calc(6px * 0.8);
+        margin-bottom: calc(44px * 0.8);
+    }
+}
+
+/* 800px 이하 추가 반응형 */
+@media screen and (max-width: 800px) {
+    .information-title {
+        font-size: calc(48px * 0.5);
+    }
+
+    .information-description,
+    .information-descriptions {
+        font-size: calc(13px);
+        padding: 0 20px;
+        padding-bottom: calc(50px * 0.7);
+    }
+
+    .information-underlines {
+        width: calc(300px * 0.7);
+        height: calc(5px * 0.8);
+        margin-bottom: calc(44px * 0.8);
+    }
+
+    .information-underline3 {
+        width: calc(270px * 0.7);
+        height: calc(0.1px * 0.8);
+        margin-bottom: calc(44px * 0.8);
+    }
+
+
+
+
+    .information-image {
+        width: 90%;
+        height: auto;
+    }
 }
 
 
