@@ -17,7 +17,7 @@
 
         <div class="header-top">
             <span class="cta">숨은 지원금</span>
-            <span class="cta-strong">지금 확인하기</span>
+            <a href="index7.html" class="cta-strong">지금 확인하기</a>
             <div class="arrow">></div>
             <img src="img/login.png" alt="User Icon" class="icon"> <!-- 추가 -->
 
@@ -26,6 +26,7 @@
         <img src="img/menuicon.png" alt="Menu" class="menu-icon" id="menuToggle">
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-menu-items">
+                <a href="index.html" class="mobile-menu-item">물품구매서비스</a>
                 <a href="index2.html" class="mobile-menu-item">휴대폰/IP</a>
                 <a href="index3.html" class="mobile-menu-item">인터넷/TV</a>
                 <a href="index4.html" class="mobile-menu-item">교육&엔터</a>
@@ -103,7 +104,7 @@
                     <div class="promo-card-text">
                         <h3>KT특별<br>알뜰폰 가입</h3>
                         <p>쉽고 간편하게<br>KT알뜰폰 즉시 가입</p>
-                        <button class="custom-button">알뜰폰 바로 가입</button>
+                        <button class="custom-button" onclick="location.href='index7.html'">알뜰폰 바로 가입</button>
                     </div>
                 </div>
             </div>
@@ -160,7 +161,7 @@
 
 
                 <!-- 하단 버튼 -->
-                <button class="review-button">지금 바로 상담문의 하기</button>
+                <button class="review-button" onclick="location.href='index7.html'">지금 바로 상담문의 하기</button>
             </div>
 
             <div class="kt-main-container">
@@ -191,7 +192,7 @@
                 </div>
 
                 <!-- 하단 타원형 버튼 -->
-                <button class="kt-cta-button">지금 문의하기</button>
+                <button class="kt-cta-button" onclick="location.href='index7.html'">지금 문의하기</button>
             </div>
 
             <!-- 첫 번째 이미지 박스 섹션 -->
@@ -203,14 +204,14 @@
                     <img src="img/sale1.png" alt="특가 모델 이미지 1" class="sale-model-image">
                     <img src="img/sale2.png" alt="특가 모델 이미지 2" class="sale-model-image">
                 </div>
-                <div class="sale-consult-button">지금 상담받기</div>
+                <div class="sale-consult-button" onclick="location.href='index7.html'">지금 상담받기</div>
 
                 <!-- 두 번째 이미지 박스 섹션 -->
                 <div class="sale-image-section">
                     <img src="img/sale3.png" alt="특가 모델 이미지 3" class="sale-model-image">
                     <img src="img/sale4.png" alt="특가 모델 이미지 4" class="sale-model-image">
                 </div>
-                <div class="sale-consult-button">지금 상담받기</div>
+                <div class="sale-consult-button" onclick="window.location.href='index7.html'">지금 상담받기</div>
             </div>
 
             <div class="footer2">
@@ -245,7 +246,7 @@
             <div class="consult-container">
                 <div class="kt-consult-box">
                     <h2 class="consult-title">쉽고 간편한 KT상담</h2>
-                    <button class="consult-button blue">상담 문의 남기기</button>
+                    <button class="consult-button blue" onclick="window.location.href='index7.html'">상담 문의 남기기</button>
                     <button class="consult-button yellow">실시간 카카오톡</button>
                     <div class="consult-image">
                         <!-- 이미지가 들어갈 자리 -->
@@ -414,7 +415,7 @@
                         const headerLeft = headerTop.getBoundingClientRect().left;
                         menuToggle.style.left = `${headerLeft + 40}px`;
                     } else {
-                        menuToggle.style.left = '40px';
+                        menuToggle.style.left = '10px';
                     }
                 }
     

@@ -16,7 +16,7 @@
 
         <div class="header-top">
             <span class="cta">숨은 지원금</span>
-            <span class="cta-strong">지금 확인하기</span>
+            <a href="index7.html" class="cta-strong">지금 확인하기</a>
             <div class="arrow">></div>
             <img src="img/login.png" alt="User Icon" class="icon"> <!-- 추가 -->
 
@@ -25,6 +25,7 @@
         <img src="img/menuicon.png" alt="Menu" class="menu-icon" id="menuToggle">
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-menu-items">
+                <a href="index.html" class="mobile-menu-item">물품구매서비스</a>
                 <a href="index2.html" class="mobile-menu-item">휴대폰/IP</a>
                 <a href="index3.html" class="mobile-menu-item">인터넷/TV</a>
                 <a href="index4.html" class="mobile-menu-item">교육&엔터</a>
@@ -117,7 +118,7 @@
                     const headerLeft = headerTop.getBoundingClientRect().left;
                     menuToggle.style.left = `${headerLeft + 40}px`;
                 } else {
-                    menuToggle.style.left = '40px';
+                    menuToggle.style.left = '10px';
                 }
             }
 

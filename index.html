@@ -17,7 +17,7 @@
         <!-- Green Banner -->
         <div class="header-top">
             <span class="cta">숨은 지원금</span>
-            <span class="cta-strong">지금 확인하기</span>
+            <a href="index7.html" class="cta-strong">지금 확인하기</a>
             <div class="arrow">></div>
             <img src="img/login.png" alt="User Icon" class="icon"> <!-- 추가 -->
 
@@ -26,6 +26,7 @@
         <img src="img/menuicon.png" alt="Menu" class="menu-icon" id="menuToggle">
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-menu-items">
+                <a href="index.html" class="mobile-menu-item">물품구매서비스</a>
                 <a href="index2.html" class="mobile-menu-item">휴대폰/IP</a>
                 <a href="index3.html" class="mobile-menu-item">인터넷/TV</a>
                 <a href="index4.html" class="mobile-menu-item">교육&엔터</a>
@@ -116,7 +117,7 @@
                     <h1 class="cont-title1">제조 업체 각종 소모품</h1>
                     <p class="cont-support1">50% 부담금 지원</p>
                     <p class="cont-script1">내가 원하는 맞춤 상품</p>
-                    <button class="cont-button1">견적받기</button>
+                    <button class="cont-button1" onclick="location.href='index7.html'">견적받기</button>
                 </div>
             </div>
             <div class="underline"></div>
@@ -125,7 +126,7 @@
                     <h1 class="cont-title2">리빙 용품</h1>
                     <p class="cont-support2">50% 부담금 지원</p>
                     <p class="cont-script2">내가 원하는 맞춤 상품</p>
-                    <button class="cont-button2">견적받기</button>
+                    <button class="cont-button2" onclick="location.href='index7.html'">견적받기</button>
                 </div>
                 <div class="container-image2">
                     <img src="img/shop2.png" alt="Cookware Set">
@@ -140,7 +141,7 @@
                     <h1 class="cont-title3">제조 업체 각종 소모품</h1>
                     <p class="cont-support3">50% 부담금 지원</p>
                     <p class="cont-script3">내가 원하는 맞춤 상품</p>
-                    <button class="cont-button3">견적받기</button>
+                    <button class="cont-button3" onclick="location.href='index7.html'">견적받기</button>
                 </div>
             </div>
             <div class="underline"></div>
@@ -149,7 +150,7 @@
                     <h1 class="cont-title4">행사 기념품</h1>
                     <p class="cont-support4">50% 부담금 지원</p>
                     <p class="cont-script4">내가 원하는 맞춤 상품</p>
-                    <button class="cont-button4">견적받기</button>
+                    <button class="cont-button4" onclick="location.href='index7.html'">견적받기</button>
                 </div>
                 <div class="container-image4">
                     <img src="img/shop4.png" alt="Cookware Set">
@@ -189,7 +190,7 @@
         <div class="consult-container">
             <div class="kt-consult-box">
                 <h2 class="consult-title">쉽고 간편한 KT상담</h2>
-                <button class="consult-button blue">상담 문의 남기기</button>
+                <button class="consult-button blue" onclick="window.location.href='index7.html'">상담 문의 남기기</button>
                 <button class="consult-button yellow">실시간 카카오톡</button>
                 <div class="consult-image">
                     <!-- 이미지가 들어갈 자리 -->
@@ -198,7 +199,7 @@
                 <button class="consult-arrow">></button>
             </div>
             <button class="show-arrow">
-                << /button> <!-- 새로운 화살표 버튼 -->
+                <</button> <!-- 새로운 화살표 버튼 -->
 
         </div>
     </div>
@@ -264,7 +265,7 @@
                     const headerLeft = headerTop.getBoundingClientRect().left;
                     menuToggle.style.left = `${headerLeft + 40}px`;
                 } else {
-                    menuToggle.style.left = '40px';
+                    menuToggle.style.left = '10px';
                 }
             }
 

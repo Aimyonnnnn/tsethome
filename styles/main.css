@@ -3435,24 +3435,13 @@
     display: none;
     position: fixed;
     top: 25px;
-    left: var(--header-left-margin, 40px);
     width: 30px;
     height: 30px;
     cursor: pointer;
     z-index: 1001;
 }
 
-@media screen and (min-width: 1921px) {
-    :root {
-        --header-left-margin: calc((100vw - 1920px)/2 + 40px);
-    }
-}
 
-@media screen and (max-width: 1920px) {
-    .menu-icon {
-        left: 40px;
-    }
-}
 
 .menu-icon {
     display: none;
@@ -3546,5 +3535,156 @@
         /* 왼쪽 여백 */
         display: block;
         /* 기본적으로는 숨김 */
+    }
+}
+
+
+
+.form-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    margin: 0;
+}
+
+.form-container {
+    background: #fff;
+    padding: 20px;
+    width: 90%;
+    max-width: 380px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* 컬럼 방향 설정 */
+    align-items: left; /* 수평 중앙 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+}
+
+.form-title {
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: 'Paperlogy-6';
+}
+
+.form-description {
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-family: 'Paperlogy-3';
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin: 10px 0 5px;
+    font-size: 26px;
+    font-family: 'Paperlogy-3';
+
+}
+
+.form-select,
+.form-input,
+.form-textarea {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-family: 'Paperlogy-4';
+
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.form-label2{
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-family: 'Paperlogy-3';
+}
+
+.form-checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-checkbox {
+    margin-right: 10px;
+}
+
+.form-checkbox-label {
+    font-size: 20px;
+    font-family: 'Paperlogy-4';
+
+}
+
+.form-submit-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Paperlogy-4';
+
+}
+
+.form-submit-button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 3000px) {
+    .form-body {
+        padding: 0 20px; /* 기본적인 좌우 여백 조정 */
+    }
+
+    .form-container {
+        max-width: 500px; /* 컨테이너가 화면 전체를 사용 */
+        margin: 0 auto; /* 중앙 정렬 유지 */
+        padding: 20px;
+    }
+}
+
+/* 반응형: 800px 이하 */
+@media (max-width: 800px) {
+    .form-container {
+        width: 100%;
+        margin: 0;
+        padding: 10px; /* 내부 패딩 조정 */
+        box-sizing: border-box;
+    }
+
+    .form-body {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .form-title,
+    .form-description,
+    .form-label,
+    .form-select,
+    .form-input,
+    .form-textarea,
+    .form-checkbox-label,
+    .form-submit-button {
+        font-size: calc(16px + 0.5vw); /* 뷰포트 크기에 따라 크기 조정 */
+    }
+
+    .form-submit-button {
+        padding: calc(8px + 0.3vw);
     }
 }
