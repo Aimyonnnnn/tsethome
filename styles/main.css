@@ -1875,41 +1875,39 @@
 
 .custom-banner {
     width: 100%;
-    max-width: 1568px; /* 필요시 조정 */
-    height: 153px; /* 필요에 따라 높이 조정 */
+    max-width: 1568px;
+    height: 153px;
     background: linear-gradient(to bottom, #00c9b1, #00a29e);
-    border-top-left-radius: 80px; /* 왼쪽 위 모서리 라운딩 */
-    border-top-right-radius: 80px; /* 오른쪽 위 모서리 라운딩 */
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    margin: 0 auto; /* 중앙 정렬 */
-    padding-left: 220px;
-    position: fixed; /* 화면에 고정 */
-    bottom: 0; /* 하단 끝에 고정 */
-    left: 50%; /* 가로 중앙 정렬 */
-    transform: translateX(-50%); /* 중앙 정렬 보정 */
-    z-index: 1000; /* 다른 요소 위에 표시 */
-
-
-    }
+    margin: 0 auto;
+    padding: 0 220px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    overflow: visible; /* 추가 */
+}
 
 .custom-text-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 1920px;
-    height: 102px;
-    
+    height: auto; /* 수정 */
+    position: relative; /* 추가 */
 }
 
 .custom-text {
     font-size: 25px;
     font-family: 'Paperlogy-4', sans-serif;
-    /* 폰트 적용 */
+    color: #000;
     margin: 0;
-    color: #000; /* 텍스트 색상 */
+    white-space: nowrap; /* 추가 */
 }
 
 .custom-phone-number {
@@ -1918,6 +1916,7 @@
     margin: 5px 0 0;
     font-weight: bold;
     color: #000;
+    white-space: nowrap; /* 추가 */
 }
 
 .custom-button-container {
@@ -1966,6 +1965,8 @@
     align-items: flex-start;
     gap: 40px;
     padding-top: 70px;
+    max-width: 1920px; /* 추가 */
+    margin: 0 auto; /* 추가 */
 }
 
 
@@ -1981,6 +1982,8 @@
     font-size: 16px;
     text-align: left;
     width: 100%;
+    position: relative; /* 추가 */
+
 }
 
 .education-menu-item {
@@ -1988,6 +1991,8 @@
     font-size: 27px;
     margin: 0;
     padding: 0;
+    width: 100%; /* 추가 */
+
 }
 
 .education-menu-underline {
