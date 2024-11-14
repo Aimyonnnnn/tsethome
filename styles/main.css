@@ -62,7 +62,8 @@
 .header-top {
     width: 100%;
     max-width: 1920px;
-    margin: 0 auto; /* 가로 가운데 정렬 */
+    margin: 0 auto;
+    /* 가로 가운데 정렬 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,11 +71,15 @@
     height: 80.56px;
     padding: 0;
     box-sizing: border-box;
-    position: fixed; /* 고정 위치 설정 */
-    top: 0; /* 화면 상단에 고정 */
+    position: fixed;
+    /* 고정 위치 설정 */
+    top: 0;
+    /* 화면 상단에 고정 */
     left: 50%;
-    transform: translateX(-50%); /* 가로 가운데 정렬 */
-    z-index: 1000; /* 다른 콘텐츠 위에 위치하도록 설정 */
+    transform: translateX(-50%);
+    /* 가로 가운데 정렬 */
+    z-index: 1000;
+    /* 다른 콘텐츠 위에 위치하도록 설정 */
 }
 
 .header-top .cta,
@@ -121,14 +126,11 @@
     justify-content: center;
     gap: 2px;
     font-family: 'Paperlogy-5', sans-serif;
-    margin: 0 auto;
+    margin: 80.56px auto 0;
     flex-wrap: nowrap;
-    position: fixed; /* 고정 위치 설정 */
-    top: 80.56px; /* 헤더 높이만큼 아래에 위치 */
-    left: 50%;
-    transform: translateX(-50%); /* 가로 가운데 정렬 */
-    z-index: 999; /* 헤더보다 뒤에 오도록 설정 */
+    z-index: 999;
 }
+
 
 .title-icon {
     display: flex;
@@ -230,9 +232,10 @@
 
 @media (max-width: 768px) {
     .nav-bar {
-        justify-content: center;
-        gap: 8px;
+        display: flex; /* display: none 제거, flex 유지 */
         padding: 10px 0;
+        flex-wrap: wrap;
+        height: auto; /* 높이 자동 조정 */
     }
 
     .nav-item {
@@ -1259,10 +1262,12 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px; /* 카드 간 간격 조정 */
+    gap: 20px;
+    /* 카드 간 간격 조정 */
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 50px; /* 전체 컨테이너 상단 여백 */
+    padding-top: 50px;
+    /* 전체 컨테이너 상단 여백 */
     padding-bottom: 100px;
 }
 
@@ -1271,7 +1276,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 300px; /* 각 카드의 너비 */
+    width: 300px;
+    /* 각 카드의 너비 */
 }
 
 .circle {
@@ -1284,30 +1290,35 @@
     align-items: center;
     font-size: 20px;
     border-radius: 50%;
-    margin-bottom: 20px; /* 원과 이미지 사이 간격 */
+    margin-bottom: 20px;
+    /* 원과 이미지 사이 간격 */
 }
 
 .promo-card {
     width: 200px;
     height: auto;
-    margin-bottom: 15px; /* 이미지와 텍스트 사이 간격 */
+    margin-bottom: 15px;
+    /* 이미지와 텍스트 사이 간격 */
 }
 
 .promo-card img {
     width: 100%;
     height: auto;
-    object-fit: cover; /* 필요에 따라 조정 가능 */
+    object-fit: cover;
+    /* 필요에 따라 조정 가능 */
 }
 
 .promo-card-text h3 {
-    font-size: 35px; /* 원하는 글자 크기 */
+    font-size: 35px;
+    /* 원하는 글자 크기 */
     font-family: 'Paperlogy-5';
     color: #000000;
     text-align: center;
 }
 
 .promo-card-text p {
-    font-size: 16px; /* 원하는 글자 크기 */
+    font-size: 16px;
+    /* 원하는 글자 크기 */
     font-family: 'Paperlogy-3';
     color: #525252;
     text-align: center;
@@ -1315,7 +1326,8 @@
 }
 
 .promo-card-text button {
-    font-size: 16px; /* 원하는 글자 크기 */
+    font-size: 16px;
+    /* 원하는 글자 크기 */
     font-family: 'Paperlogy-3';
     padding: 10px 20px;
     background-color: #D9D9D9;
@@ -1325,10 +1337,12 @@
 }
 
 .custom-button {
-        width: 196px;
+    width: 196px;
     height: 29px;
-    background-color: #D9D9D9; /* 회색 배경 */
-    color: #4A4A4A; /* 텍스트 색상 */
+    background-color: #D9D9D9;
+    /* 회색 배경 */
+    color: #4A4A4A;
+    /* 텍스트 색상 */
     border: none;
     font-size: 16px;
     font-weight: normal;
@@ -1341,7 +1355,8 @@
 }
 
 .custom-button:hover {
-    background-color: #b3b3b3; /* 호버 시 약간 어두운 회색으로 변경 */
+    background-color: #b3b3b3;
+    /* 호버 시 약간 어두운 회색으로 변경 */
     transform: scale(1.05);
     color: #000000;
 }
@@ -1350,7 +1365,8 @@
     width: 1920px;
     height: 673px;
     margin: 0 auto;
-    background-color: #00a19a; /* 배경색 예시, 필요시 변경 가능 */
+    background-color: #00a19a;
+    /* 배경색 예시, 필요시 변경 가능 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1360,7 +1376,8 @@
 .review-container {
     display: flex;
     justify-content: space-between;
-    max-width: 1980px; /* 필요에 따라 조정 */
+    max-width: 1980px;
+    /* 필요에 따라 조정 */
     overflow: hidden;
 }
 
@@ -1374,15 +1391,18 @@
 }
 
 .review-box-title .white-text {
-    color: #ffffff; /* 고객님들의 */
+    color: #ffffff;
+    /* 고객님들의 */
 }
 
 .review-box-title .yellow-text {
-    color: #FDE500; /* 솔직한 후기! */
+    color: #FDE500;
+    /* 솔직한 후기! */
 }
 
 .review-box {
-    width: 586px; /* 필요에 따라 조정 */
+    width: 586px;
+    /* 필요에 따라 조정 */
     height: 285px;
     background-color: #fff;
     border-radius: 10px;
@@ -1392,7 +1412,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left; /* 전체적으로 왼쪽 정렬 */
+    text-align: left;
+    /* 전체적으로 왼쪽 정렬 */
     margin-right: 30px;
 }
 
@@ -1405,7 +1426,8 @@
 .review-icon {
     width: 36px;
     height: 36px;
-    margin-right: 10px; /* 텍스트와 이미지 간의 간격 */
+    margin-right: 10px;
+    /* 텍스트와 이미지 간의 간격 */
 }
 
 .review-title {
@@ -1434,10 +1456,13 @@
     font-size: 20px;
     color: #000000;
     line-height: 35px;
-    word-wrap: break-word; /* 줄바꿈을 자동으로 적용 */
-    overflow-wrap: break-word; /* 대체 줄바꿈 적용 */
-    text-align: left; /* 기본 왼쪽 정렬 */
-    
+    word-wrap: break-word;
+    /* 줄바꿈을 자동으로 적용 */
+    overflow-wrap: break-word;
+    /* 대체 줄바꿈 적용 */
+    text-align: left;
+    /* 기본 왼쪽 정렬 */
+
 }
 
 
@@ -1447,21 +1472,26 @@
     font-size: 40px;
     width: 677px;
     height: 106px;
-    background-color: #FDE500; /* 버튼 배경색 예시 */
+    background-color: #FDE500;
+    /* 버튼 배경색 예시 */
     border: none;
     border-radius: 53px;
     color: #0B8E85;
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 그림자 효과 */
 
 }
 
 .review-button:hover {
-    transform: scale(1.05); /* 버튼을 약간 키우기 */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 그림자 강도 증가 */
-    background-color: #FFD700; /* 호버 시 배경색 전환 (밝은 노란색) */
+    transform: scale(1.05);
+    /* 버튼을 약간 키우기 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* 그림자 강도 증가 */
+    background-color: #FFD700;
+    /* 호버 시 배경색 전환 (밝은 노란색) */
 }
 
 .kt-main-container {
@@ -1502,7 +1532,8 @@
     border-radius: 66px;
     margin: 0 auto;
     position: relative;
-    margin-bottom: 126px; /* 추가된 마진 */
+    margin-bottom: 126px;
+    /* 추가된 마진 */
 
 }
 
@@ -1516,7 +1547,7 @@
     position: absolute;
     bottom: -15px;
     left: calc(50% - 30px);
-    
+
 }
 
 .kt-photo-section22 {
@@ -1529,35 +1560,44 @@
 }
 
 .kt-photo-section {
-    position: relative; /* 자식 요소의 절대 위치를 위한 기준 */
+    position: relative;
+    /* 자식 요소의 절대 위치를 위한 기준 */
     width: 975px;
     height: 322px;
     margin: 0 auto;
-    border-radius: 10px; /* 포토섹션 박스의 라운딩 처리가 필요한 경우 */
-    overflow: visible; /* 자식 요소가 넘치는 경우 숨김 */
+    border-radius: 10px;
+    /* 포토섹션 박스의 라운딩 처리가 필요한 경우 */
+    overflow: visible;
+    /* 자식 요소가 넘치는 경우 숨김 */
     margin-bottom: 60px;
 
 }
 
 .kt-label {
     position: absolute;
-    top: -30px; /* 포토섹션 박스의 상단에 위치 */
+    top: -30px;
+    /* 포토섹션 박스의 상단에 위치 */
     width: 153px;
     height: 42px;
-    background-color: #414C94; /* 예시 색상 */
+    background-color: #414C94;
+    /* 예시 색상 */
     color: #ffffff;
     font-family: 'Paperlogy-7', sans-serif;
-    font-size: 16px; /* 텍스트 크기는 필요에 따라 조정 */
+    font-size: 16px;
+    /* 텍스트 크기는 필요에 따라 조정 */
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 15px; /* 모서리 둥글게 처리 */
-    z-index: 1; /* 포토섹션 위에 위치하도록 설정 */
+    border-radius: 15px;
+    /* 모서리 둥글게 처리 */
+    z-index: 1;
+    /* 포토섹션 위에 위치하도록 설정 */
 }
 
 
 .kt-photo-section:last-child {
-    margin-bottom: 0; /* 마지막 섹션의 여백 제거 */
+    margin-bottom: 0;
+    /* 마지막 섹션의 여백 제거 */
 }
 
 .kt-photo-image {
@@ -1642,8 +1682,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 35px; /* 이미지 간 간격 */
-    
+    gap: 35px;
+    /* 이미지 간 간격 */
+
 }
 
 .sale-model-image {
@@ -1663,16 +1704,20 @@
     justify-content: center;
     align-items: center;
     border-radius: 55.36px;
-    margin: 60px auto; /* 버튼 상단과 하단 간격 */
+    margin: 60px auto;
+    /* 버튼 상단과 하단 간격 */
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
 .sale-consult-button:hover {
-    transform: scale(1.05); /* 버튼을 약간 키우기 */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 그림자 강도 증가 */
-    background-color: #FFD700; /* 호버 시 배경색 전환 (밝은 노란색) */
+    transform: scale(1.05);
+    /* 버튼을 약간 키우기 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* 그림자 강도 증가 */
+    background-color: #FFD700;
+    /* 호버 시 배경색 전환 (밝은 노란색) */
 }
 
 .footer2 {
@@ -1698,8 +1743,10 @@
 .image-container {
     width: 1920px;
     height: 619px;
-    margin: 0 auto; /* 가로 중앙 정렬 */
-    overflow: hidden; /* 필요한 경우 자식 요소의 넘침 방지 */
+    margin: 0 auto;
+    /* 가로 중앙 정렬 */
+    overflow: hidden;
+    /* 필요한 경우 자식 요소의 넘침 방지 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1708,21 +1755,23 @@
 .contained-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 이미지가 박스를 꽉 채우도록 설정 */
+    object-fit: cover;
+    /* 이미지가 박스를 꽉 채우도록 설정 */
 }
 
 
 .shared-internet-tv-container {
     width: 1920px;
     height: 1730px;
-    margin: 0 auto; /* 중앙 정렬 */
+    margin: 0 auto;
+    /* 중앙 정렬 */
     padding: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #13AFA4;
-    
+
 }
 
 .shared-main-text {
@@ -1750,7 +1799,8 @@
     max-width: 508px;
     height: 7px;
     background-color: #FDE500;
-    margin: 10px 0 38px 0; /* 위아래 여백 조정 */
+    margin: 10px 0 38px 0;
+    /* 위아래 여백 조정 */
 }
 
 .shared-image-box {
@@ -1759,7 +1809,8 @@
     overflow: hidden;
     border-radius: 10px;
     box-sizing: border-box;
-    margin-bottom: 20px; /* 이미지와 버튼 사이 간격 */
+    margin-bottom: 20px;
+    /* 이미지와 버튼 사이 간격 */
 }
 
 .shared-combined-container {
@@ -1768,7 +1819,8 @@
     height: 413px;
     overflow: hidden;
     border-radius: 10px;
-    margin-bottom: 57px; /* 각 컨테이너 간격 */
+    margin-bottom: 57px;
+    /* 각 컨테이너 간격 */
 }
 
 .shared-main-image {
@@ -1789,7 +1841,8 @@
     align-items: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    outline: none; /* 테두리 제거 */
+    outline: none;
+    /* 테두리 제거 */
     border: none;
 }
 
@@ -1810,20 +1863,26 @@
     align-items: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    outline: none; /* 테두리 제거 */
-    border: none;  /* 불필요한 경계 제거 */
-    transition: background-color 0.3s ease, color 0.3s ease; /* 부드러운 전환 효과 */
+    outline: none;
+    /* 테두리 제거 */
+    border: none;
+    /* 불필요한 경계 제거 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* 부드러운 전환 효과 */
 }
 
 .shared-button-overlay:hover {
-    background-color: #A67C52; /* 배경색을 약간 어둡게 변경 */
-    color: #fff; /* 텍스트 색상을 흰색으로 변경 */
+    background-color: #A67C52;
+    /* 배경색을 약간 어둡게 변경 */
+    color: #fff;
+    /* 텍스트 색상을 흰색으로 변경 */
 }
 
 .shared-button-overlay:hover .shared-button-text {
     font-family: 'Paperlogy-5', sans-serif;
     font-size: 30px;
-    color: #ffffff; /* 텍스트 색상을 흰색으로 설정 */
+    color: #ffffff;
+    /* 텍스트 색상을 흰색으로 설정 */
 }
 
 .custom-outer-container {
@@ -1832,8 +1891,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff; /* 필요에 따라 배경색을 설정하세요 */
-    margin: 0 auto; /* 필요 시 가운데 정렬 */
+    background-color: #ffffff;
+    /* 필요에 따라 배경색을 설정하세요 */
+    margin: 0 auto;
+    /* 필요 시 가운데 정렬 */
 }
 
 .custom-inner-container {
@@ -1847,7 +1908,8 @@
 .custom-inner-image {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* 이미지가 부모 요소에 맞춰져 잘림 없이 표시됨 */
+    object-fit: contain;
+    /* 이미지가 부모 요소에 맞춰져 잘림 없이 표시됨 */
 }
 
 .custom-outer-container2 {
@@ -1856,8 +1918,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F5F5F5; /* 필요에 따라 배경색을 설정하세요 */
-    margin: 0 auto; /* 필요 시 가운데 정렬 */
+    background-color: #F5F5F5;
+    /* 필요에 따라 배경색을 설정하세요 */
+    margin: 0 auto;
+    /* 필요 시 가운데 정렬 */
 }
 
 .custom-inner-container2 {
@@ -1871,7 +1935,8 @@
 .custom-inner-image2 {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* 이미지가 부모 요소에 맞춰져 잘림 없이 표시됨 */
+    object-fit: contain;
+    /* 이미지가 부모 요소에 맞춰져 잘림 없이 표시됨 */
 }
 
 
@@ -1893,15 +1958,18 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    overflow: visible; /* 추가 */
+    overflow: visible;
+    /* 추가 */
 }
 
 .custom-text-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: auto; /* 수정 */
-    position: relative; /* 추가 */
+    height: auto;
+    /* 수정 */
+    position: relative;
+    /* 추가 */
 }
 
 .custom-text {
@@ -1909,7 +1977,8 @@
     font-family: 'Paperlogy-4', sans-serif;
     color: #000;
     margin: 0;
-    white-space: nowrap; /* 추가 */
+    white-space: nowrap;
+    /* 추가 */
 }
 
 .custom-phone-number {
@@ -1918,12 +1987,14 @@
     margin: 5px 0 0;
     font-weight: bold;
     color: #000;
-    white-space: nowrap; /* 추가 */
+    white-space: nowrap;
+    /* 추가 */
 }
 
 .custom-button-container {
     display: flex;
-    gap: 10px; /* 버튼 간격 */
+    gap: 10px;
+    /* 버튼 간격 */
     padding-right: 220px;
 }
 
@@ -1967,8 +2038,10 @@
     align-items: flex-start;
     gap: 40px;
     padding-top: 70px;
-    max-width: 1920px; /* 추가 */
-    margin: 0 auto; /* 추가 */
+    max-width: 1920px;
+    /* 추가 */
+    margin: 0 auto;
+    /* 추가 */
 }
 
 
@@ -1984,7 +2057,8 @@
     font-size: 16px;
     text-align: left;
     width: 100%;
-    position: relative; /* 추가 */
+    position: relative;
+    /* 추가 */
 
 }
 
@@ -1993,7 +2067,8 @@
     font-size: 27px;
     margin: 0;
     padding: 0;
-    width: 100%; /* 추가 */
+    width: 100%;
+    /* 추가 */
 
 }
 
@@ -2020,14 +2095,16 @@
     width: 174.62px;
     height: 2px;
     background-color: #333333;
-    margin-top: 5px; /* 텍스트와 밑줄 사이의 간격 */
+    margin-top: 5px;
+    /* 텍스트와 밑줄 사이의 간격 */
 }
 
 .education-menu-underline2 {
     width: 114.62px;
     height: 2px;
     background-color: #333333;
-    margin-top: 5px; /* 텍스트와 밑줄 사이의 간격 */
+    margin-top: 5px;
+    /* 텍스트와 밑줄 사이의 간격 */
 }
 
 
@@ -2039,34 +2116,44 @@
     text-align: center;
     max-width: 1920px;
     margin: 0 auto;
-    padding: 70px; /* 상하 여백 설정 */
-   
-    
+    padding: 70px;
+    /* 상하 여백 설정 */
+
+
 }
 
 .education-subtitle {
-    font-family: 'Paperlogy-4', sans-serif; /* 필요시 변경 가능 */
-    font-size: 24px; /* 서브타이틀 크기 */
-    color: #333936; /* 서브타이틀 색상 */
+    font-family: 'Paperlogy-4', sans-serif;
+    /* 필요시 변경 가능 */
+    font-size: 24px;
+    /* 서브타이틀 크기 */
+    color: #333936;
+    /* 서브타이틀 색상 */
     margin: 0;
     padding: 5px 0;
 }
 
 .education-main-title {
-    font-family: 'Paperlogy-7', sans-serif; /* 메인 타이틀 폰트 */
-    font-size: 60px; /* 메인 타이틀 크기 */
-    color: #006C67; /* 메인 타이틀 색상 */
+    font-family: 'Paperlogy-7', sans-serif;
+    /* 메인 타이틀 폰트 */
+    font-size: 60px;
+    /* 메인 타이틀 크기 */
+    color: #006C67;
+    /* 메인 타이틀 색상 */
     margin: 0;
-    padding: 10px 0; /* 상하 여백 설정 */
+    padding: 10px 0;
+    /* 상하 여백 설정 */
 }
 
 
 .education-main-banner {
     height: 600px;
     max-width: 1920px;
-    margin: 0 auto; /* 가로 가운데 정렬 */
+    margin: 0 auto;
+    /* 가로 가운데 정렬 */
     background: url('../img/main10.png') no-repeat center center;
-    background-size: cover; /* 이미지가 컨테이너에 맞게 비율을 무시하고 꽉 채우도록 조정 */
+    background-size: cover;
+    /* 이미지가 컨테이너에 맞게 비율을 무시하고 꽉 채우도록 조정 */
     position: relative;
     display: flex;
     align-items: center;
@@ -2076,36 +2163,45 @@
 
 .education-banner-text {
     font-family: 'Paperlogy-7';
-    color: #ffffff; /* 텍스트 색상 */
-    font-size: 60px; /* 필요에 따라 크기 조정 */
+    color: #ffffff;
+    /* 텍스트 색상 */
+    font-size: 60px;
+    /* 필요에 따라 크기 조정 */
     text-align: center;
     font-weight: bold;
     padding: 10px 20px;
-    border-radius: 5px; /* 선택 사항: 모서리를 둥글게 */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* 검정 그림자 */
+    border-radius: 5px;
+    /* 선택 사항: 모서리를 둥글게 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    /* 검정 그림자 */
 }
 
 .education-list {
     width: 968px;
     height: 460px;
-        margin: 0 auto; /* 선택 사항: 가운데 정렬 */
-    display: flex; /* 자식 요소 중앙 배치 */
+    margin: 0 auto;
+    /* 선택 사항: 가운데 정렬 */
+    display: flex;
+    /* 자식 요소 중앙 배치 */
     align-items: center;
     justify-content: center;
-    }
+}
 
 
 
 /* 기존 hover 스타일 */
 .education-menu:hover .education-menu-title,
 .education-menu.active .education-menu-title {
-    color: #13AFA4; /* 마우스 올렸을 때 및 active 상태에서 텍스트 색상 변경 */
+    color: #13AFA4;
+    /* 마우스 올렸을 때 및 active 상태에서 텍스트 색상 변경 */
 }
 
 .education-menu:hover .education-menu-underline,
 .education-menu.active .education-menu-underline {
-    background-color: #13AFA4; /* 언더라인 색상 변경 */
-    position: relative; /* 가상 요소의 위치 기준을 설정 */
+    background-color: #13AFA4;
+    /* 언더라인 색상 변경 */
+    position: relative;
+    /* 가상 요소의 위치 기준을 설정 */
 }
 
 .education-menu:hover .education-menu-underline::before,
@@ -2115,30 +2211,38 @@
     content: "";
     width: 15px;
     height: 15px;
-    background-color: #13AFA4; /* 원의 색상 */
+    background-color: #13AFA4;
+    /* 원의 색상 */
     border-radius: 50%;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%) translateX(-50%); /* 수평 및 수직 중앙 정렬 */
+    transform: translateY(-50%) translateX(-50%);
+    /* 수평 및 수직 중앙 정렬 */
 }
 
 .education-menu:hover .education-menu-underline::before,
 .education-menu.active .education-menu-underline::before {
-    left: -20px; /* 좌측 원 위치 조정 */
-    transform: translateY(-50%) translateX(60%); /* 중앙에 맞춤 */
+    left: -20px;
+    /* 좌측 원 위치 조정 */
+    transform: translateY(-50%) translateX(60%);
+    /* 중앙에 맞춤 */
 }
 
 .education-menu:hover .education-menu-underline::after,
 .education-menu.active .education-menu-underline::after {
-    right: -20px; /* 우측 원 위치 조정 */
-    transform: translateY(-50%) translateX(-60%); /* 중앙에 맞춤 */
+    right: -20px;
+    /* 우측 원 위치 조정 */
+    transform: translateY(-50%) translateX(-60%);
+    /* 중앙에 맞춤 */
 }
 
 /* underline2 관련 hover 및 active 스타일 */
 .education-menu:hover .education-menu-underline2,
 .education-menu.active .education-menu-underline2 {
-    background-color: #13AFA4; /* 언더라인 색상 변경 */
-    position: relative; /* 가상 요소의 위치 기준을 설정 */
+    background-color: #13AFA4;
+    /* 언더라인 색상 변경 */
+    position: relative;
+    /* 가상 요소의 위치 기준을 설정 */
 }
 
 .education-menu:hover .education-menu-underline2::before,
@@ -2148,36 +2252,44 @@
     content: "";
     width: 15px;
     height: 15px;
-    background-color: #13AFA4; /* 원의 색상 */
+    background-color: #13AFA4;
+    /* 원의 색상 */
     border-radius: 50%;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%) translateX(-50%); /* 수평 및 수직 중앙 정렬 */
+    transform: translateY(-50%) translateX(-50%);
+    /* 수평 및 수직 중앙 정렬 */
 }
 
 .education-menu:hover .education-menu-underline2::before,
 .education-menu.active .education-menu-underline2::before {
-    left: -20px; /* 좌측 원 위치 조정 */
-    transform: translateY(-50%) translateX(60%); /* 중앙에 맞춤 */
+    left: -20px;
+    /* 좌측 원 위치 조정 */
+    transform: translateY(-50%) translateX(60%);
+    /* 중앙에 맞춤 */
 }
 
 .education-menu:hover .education-menu-underline2::after,
 .education-menu.active .education-menu-underline2::after {
-    right: -20px; /* 우측 원 위치 조정 */
-    transform: translateY(-50%) translateX(-60%); /* 중앙에 맞춤 */
+    right: -20px;
+    /* 우측 원 위치 조정 */
+    transform: translateY(-50%) translateX(-60%);
+    /* 중앙에 맞춤 */
 }
 
 
-.list-container{
+.list-container {
     padding-bottom: 100px;
 }
 
 .information-main-banner {
     height: 600px;
     max-width: 1920px;
-    margin: 0 auto; /* 가로 가운데 정렬 */
+    margin: 0 auto;
+    /* 가로 가운데 정렬 */
     background: url('../img/main11.png') no-repeat center center;
-    background-size: cover; /* 이미지가 컨테이너에 맞게 비율을 무시하고 꽉 채우도록 조정 */
+    background-size: cover;
+    /* 이미지가 컨테이너에 맞게 비율을 무시하고 꽉 채우도록 조정 */
     position: relative;
     display: flex;
     align-items: center;
@@ -2192,9 +2304,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff; /* 배경색은 필요에 따라 조정 */
+    background-color: #ffffff;
+    /* 배경색은 필요에 따라 조정 */
     box-sizing: border-box;
-    padding: 40px 0; /* 상하 여백 추가 */
+    padding: 40px 0;
+    /* 상하 여백 추가 */
 
 }
 
@@ -2202,14 +2316,16 @@
     font-family: 'Paperlogy-7';
     font-size: 48px;
     font-weight: bold;
-    color: #0B8E85; /* 제목 색상 설정 */
+    color: #0B8E85;
+    /* 제목 색상 설정 */
     margin-bottom: px;
 }
 
 .information-underline {
     width: 398px;
     height: 6px;
-    background-color: #008080; /* 언더라인 색상 */
+    background-color: #008080;
+    /* 언더라인 색상 */
     margin-bottom: 44px;
 }
 
@@ -2217,13 +2333,15 @@
     font-family: 'Pretendard-Light';
     font-size: 15px;
     text-align: center;
-    color: #000000; /* 글자 색상 설정 */
+    color: #000000;
+    /* 글자 색상 설정 */
     line-height: 1.5;
-    max-width: 992px; /* 텍스트 최대 너비 제한 */
+    max-width: 992px;
+    /* 텍스트 최대 너비 제한 */
     padding-bottom: 75px;
 }
 
-.information-image-box{
+.information-image-box {
     width: 1920px;
     height: 723px;
     margin: 0 auto;
@@ -2231,74 +2349,86 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #F5F5F5; /* 배경색은 필요에 따라 조정 */
-    box-sizing: border-box;  
+    background-color: #F5F5F5;
+    /* 배경색은 필요에 따라 조정 */
+    box-sizing: border-box;
 
 }
 
 .information-image {
     width: 1029px;
     height: 388px;
-    object-fit: contain; /* 이미지 비율 유지 */
+    object-fit: contain;
+    /* 이미지 비율 유지 */
     margin: 0 auto;
     padding-bottom: 60px;
-    
+
 }
 
 .information-descriptions {
     font-family: 'Pretendard-Light';
     font-size: 15px;
     text-align: center;
-    color: #000000; /* 글자 색상 설정 */
+    color: #000000;
+    /* 글자 색상 설정 */
     line-height: 1.5;
-    max-width: 992px; /* 텍스트 최대 너비 제한 */
+    max-width: 992px;
+    /* 텍스트 최대 너비 제한 */
     padding-bottom: 50px;
 }
 
 .information-underlines {
     width: 438px;
     height: 6px;
-    background-color: #008080; /* 언더라인 색상 */
+    background-color: #008080;
+    /* 언더라인 색상 */
     margin-bottom: 44px;
 }
 
 
 .consult-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 180px;
     right: 0;
     z-index: 1000;
     background-color: transparent;
- }
- 
- .kt-consult-box {
-    position: relative; /* 추가 */
-    width: 189px; /* 추가 */
-    height: 373px; /* 추가 */
+}
+
+.kt-consult-box {
+    position: relative;
+    width: 189px;
+    height: 373px;
     background-color: #FFFFFF;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 20px 0 0 20px;
-    display: flex; /* 추가 */
-    flex-direction: column; /* 추가 */
-    align-items: center; /* 추가 */
-    padding: 0 17.5px; /* 좌우 여백 추가 */
-    box-sizing: border-box; /* 추가 */
- }
- 
- .consult-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 17.5px;
+    box-sizing: border-box;
+}
+
+.consult-title {
     text-align: left;
     font-family: 'Paperlogy-5';
     font-size: 14px;
     padding-top: 20px;
     margin-bottom: 3px;
     align-self: flex-start;
-    width: 100%; /* 추가 - 전체 너비 사용 */
+    width: 100%;
+    /* 추가 - 전체 너비 사용 */
     padding-left: 2px;
- }
- 
- .consult-button {
-    display: flex; /* 수정 */
-    width: 100%; /* 수정 - 부모 컨테이너 기준 */
+}
+
+.consult-button {
+    display: flex;
+    /* 수정 */
+    width: 100%;
+    /* 수정 - 부모 컨테이너 기준 */
     height: 37px;
     padding: 12px;
     margin: 8px 0;
@@ -2310,20 +2440,21 @@
     cursor: pointer;
     justify-content: center;
     align-items: center;
- }
- 
- .consult-button.blue {
+}
+
+.consult-button.blue {
     background-color: #155DE7;
     color: white;
- }
- 
- .consult-button.yellow {
+}
+
+.consult-button.yellow {
     background-color: #ffd700;
     color: black;
- }
- 
- .consult-image {
-    width: 100%; /* 수정 - 부모 컨테이너 기준 */
+}
+
+.consult-image {
+    width: 100%;
+    /* 수정 - 부모 컨테이너 기준 */
     height: 167px;
     background-color: #DBDBDB;
     margin: 16px 0;
@@ -2331,22 +2462,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
- }
- 
- .consult-footer {
+}
+
+.consult-footer {
     text-align: center;
     font-size: 15px;
     margin-top: 1px;
     font-family: 'Paperlogy-8';
     padding-bottom: 20px;
-    width: 100%; /* 추가 - 전체 너비 사용 */
- }
- 
- .consult-footer strong {
-    font-weight: bold;
- }
+    width: 100%;
+    /* 추가 - 전체 너비 사용 */
+}
 
-.consult-arrow, .show-arrow  {
+.consult-footer strong {
+    font-weight: bold;
+}
+
+.consult-arrow,
+.show-arrow {
     position: absolute;
     left: -26px;
     top: 50%;
@@ -2359,18 +2492,190 @@
     align-items: center;
     font-size: 14px;
     color: #333;
-    border-radius: 12px 0 0 12px; /* 더 부드러운 둥근 모서리 */
-    border: none; /* 경계선 제거 */
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15); /* 선택적 그림자 효과 */
-    z-index: 10; /* 화살표가 항상 보이도록 보장 */
+    border-radius: 12px 0 0 12px;
+    /* 더 부드러운 둥근 모서리 */
+    border: none;
+    /* 경계선 제거 */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    /* 선택적 그림자 효과 */
+    z-index: 10;
+    /* 화살표가 항상 보이도록 보장 */
 
 }
 
 .hidden {
-    display: none; /* 숨기는 스타일 */
+    display: none;
+    /* 숨기는 스타일 */
 }
 
 .show-arrow {
-    display: none; /* 기본적으로 숨김 */
+    display: none;
+    /* 기본적으로 숨김 */
     z-index: 10;
+}
+
+/* 1100px 이하에서의 스타일 */
+@media (max-width: 1100px) {
+    .kt-consult-box {
+        transform: scale(0.6);
+        /* 40% 축소 */
+        transform-origin: right center;
+        /* 오른쪽 기준으로 축소 */
+    }
+}
+
+/* 810px 이하에서의 스타일 */
+@media (max-width: 810px) {
+    .kt-consult-box {
+        width: 80px;
+        /* 카카오톡 아이콘만 표시할 너비 */
+        height: 80px;
+        /* 카카오톡 아이콘만 표시할 높이 */
+        border-radius: 15px 0 0 15px;
+        padding: 10px;
+    }
+
+    /* 카카오톡 버튼 외 모든 요소 숨기기 */
+    .consult-title,
+    .consult-button.blue,
+    .consult-image,
+    .consult-footer,
+    .consult-arrow {
+        display: none;
+    }
+
+    /* 카카오톡 버튼만 표시 */
+    .consult-button.yellow {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0;
+        font-size: 0;
+        /* 텍스트 숨기기 */
+        background-image: url('../img/kakao.png');
+        /* 카카오톡 아이콘 이미지 */
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* show-arrow 버튼 스타일 조정 */
+@media (max-width: 810px) {
+    .show-arrow {
+        height: 80px;
+        /* kt-consult-box와 동일한 높이 */
+        border-radius: 15px 0 0 15px;
+    }
+}
+
+
+/* 메뉴 아이콘 스타일 */
+
+.menu-icon {
+    display: none;
+    position: fixed;
+    top: 25px;
+    left: 40px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* 모바일 메뉴 컨테이너 */
+.menu-icon {
+    display: none; /* 다시 none으로 변경 */
+    position: fixed;
+    top: 25px;
+    left: 40px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding-top: 150px;
+}
+
+.mobile-menu.active {
+    left: 0;
+    display: block;
+}
+
+.mobile-menu-items {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.mobile-menu-item {
+    padding: 15px 20px;
+    font-family: 'Paperlogy-5', sans-serif;
+    font-size: 18px;
+    color: #333333;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-menu-item:hover {
+    background-color: #f8f8f8;
+    color: #22B573;
+}
+
+.header-top .icon {
+    display: none;
+
+}
+
+/* 810px 이하에서 적용될 스타일 */
+@media (max-width: 810px) {
+    
+
+    .menu-icon {
+        display: none;
+    }
+
+    .nav-items-wrapper .icon {
+        display: none;
+}
+
+.header-top {
+    position: relative; /* icon 배치를 위한 기준점 설정 */
+}
+
+/* header-top 안의 icon 스타일 */
+.header-top .icon {
+    position: absolute;
+    right: 40px; /* 오른쪽 여백 */
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    width: 24px;
+    height: 24px;
+    z-index: 1002;
+}
+}
+
+
+@media (min-width: 811px) {
+    .menu-icon {
+        top: 25px;
+        /* header-top 내에서의 위치 */
+        left: 40px;
+        /* 왼쪽 여백 */
+        display: block;
+        /* 기본적으로는 숨김 */
+    }
 }
