@@ -1474,7 +1474,7 @@
         width: 100%;
         /* promo-card-text 관련 미디어쿼리 스타일 모두 제거 */
     }
-    
+
     .promo-card-text h3,
     .promo-card-text p,
     .promo-card-text .custom-button {
@@ -1484,13 +1484,13 @@
         width: auto !important;
         height: auto !important;
     }
-    
+
     /* h3 원본 크기 유지 */
     .promo-card-text h3 {
         font-size: 35px !important;
     }
 
-    
+
 
 
 }
@@ -3435,20 +3435,31 @@
     display: none;
     position: fixed;
     top: 25px;
-    left: 40px;
+    left: var(--header-left-margin, 40px);
     width: 30px;
     height: 30px;
     cursor: pointer;
     z-index: 1001;
 }
 
-/* 모바일 메뉴 컨테이너 */
+@media screen and (min-width: 1921px) {
+    :root {
+        --header-left-margin: calc((100vw - 1920px)/2 + 40px);
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    .menu-icon {
+        left: 40px;
+    }
+}
+
 .menu-icon {
     display: none;
-    /* 다시 none으로 변경 */
     position: fixed;
     top: 25px;
-    left: 40px;
+    /* 화면이 1920px보다 큰 경우 header-top의 왼쪽 경계를 기준으로 배치 */
+    left: max((100vw - 1920px)/2 + 40px, 40px);
     width: 30px;
     height: 30px;
     cursor: pointer;
