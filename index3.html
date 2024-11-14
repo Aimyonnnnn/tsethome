@@ -8,34 +8,35 @@
     <link rel="stylesheet" href="styles/reset06.css">
     <link rel="stylesheet" href="styles/style06.css">
     <link rel="stylesheet" href="styles/swiper.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css?v=2">
 
 </head>
 
 <body>
-    <div class="header">
-        <!-- Green Banner -->
-        <div class="header-top">
-            <span class="cta">숨은 지원금</span>
-            <span class="cta-strong">지금 확인하기</span>
-            <div class="arrow">></div>
-        </div>
 
-        <!-- Navigation Bar -->
-        <div class="nav-bar">
-            <a href="index.html" class="title-icon">
-                <img src="img/title-icon.png" alt="어울림">
-            </a>
-            <div class="nav-items-wrapper">
-                <a href="index.html" class="nav-item">물품구매서비스</a>
-                <a href="index2.html" class="nav-item">휴대폰/IP</a>
-                <a href="index3.html" class="nav-item">인터넷/TV</a>
-                <a href="index4.html" class="nav-item">교육&엔터</a>
-                <a href="index5.html" class="nav-item">장애인 채용 컨설팅</a>
-                <a href="index6.html" class="nav-item">회사 소개</a>
-                <img src="img/login.png" alt="User Icon" class="icon">
-            </div>
+    <div class="header-top">
+        <span class="cta">숨은 지원금</span>
+        <span class="cta-strong">지금 확인하기</span>
+        <div class="arrow">></div>
+    </div>
+
+
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <a href="index.html" class="title-icon">
+            <img src="img/title-icon.png" alt="어울림">
+        </a>
+        <div class="nav-items-wrapper">
+            <a href="index.html" class="nav-item">물품구매서비스</a>
+            <a href="index2.html" class="nav-item">휴대폰/IP</a>
+            <a href="index3.html" class="nav-item">인터넷/TV</a>
+            <a href="index4.html" class="nav-item">교육&엔터</a>
+            <a href="index5.html" class="nav-item">장애인 채용 컨설팅</a>
+            <a href="index6.html" class="nav-item">회사 소개</a>
+            <img src="img/login.png" alt="User Icon" class="icon">
         </div>
+    </div>
 
     <div class="slider">
         <div class="swiper-container">
@@ -105,8 +106,8 @@
 
     <div class="custom-banner">
         <div class="custom-text-container">
-            <p class="custom-text">전문 상담사가 가입을 빠르게 도와드립니다.</p>
-            <p class="custom-phone-number">0000-0000</p>
+            <div class="custom-text">전문 상담사가 가입을 빠르게 도와드립니다.</div>
+            <div class="custom-phone-number">0000-0000</div>
         </div>
         <div class="custom-button-container">
             <button class="custom-button">맞춤상담 문의</button>
@@ -142,28 +143,67 @@
                 </div>
             </div>
         </div>
-
-        <script src="js/jquery.min_1.12.4.js"></script>
-        <script src="js/modernizr-custom.js"></script>
-        <script src="js/ie-checker.js"></script>
-        <script src="js/swiper.min.js"></script>
-        <script>
-            var mySwiper = new Swiper('.swiper-container', {
-                loop: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    type: 'bullets',
-                },
-                autoplay: {
-                    delay: 1000,
-                },
-            })
-        </script>
     </div>
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/modernizr-custom.js"></script>
+    <script src="js/ie-checker.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+            autoplay: {
+                delay: 1000,
+            },
+        })
+    </script>
+    <div class="consult-container">
+        <div class="kt-consult-box">
+            <h2 class="consult-title">쉽고 간편한 KT상담</h2>
+            <button class="consult-button blue">상담 문의 남기기</button>
+            <button class="consult-button yellow">실시간 카카오톡</button>
+            <div class="consult-image">
+                <!-- 이미지가 들어갈 자리 -->
+            </div>
+            <div class="consult-footer">고객센터 <strong>1899-9999</strong></div>
+            <button class="consult-arrow">></button>
+        </div>
+        <button class="show-arrow">
+            << /button> <!-- 새로운 화살표 버튼 -->
+
+    </div>
+
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            const consultBox = document.querySelector('.kt-consult-box');
+            const consultArrow = document.querySelector('.consult-arrow');
+            const showArrow = document.querySelector('.show-arrow');
+
+            // 초기 상태: 컨설트 박스 보임, 새로운 화살표 숨김
+            consultArrow.addEventListener('click', () => {
+                consultBox.style.display = 'none';
+                showArrow.style.display = 'block';
+            });
+
+            showArrow.addEventListener('click', () => {
+                consultBox.style.display = 'block';
+                showArrow.style.display = 'none';
+            });
+
+
+        });
+
+
+
+    </script>
+
 </body>
 
 </html>
