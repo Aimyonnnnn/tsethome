@@ -62,25 +62,21 @@
 .header-top {
     width: 100%;
     max-width: 1920px;
-    margin: 0 auto;
-    /* 가로 가운데 정렬 */
+    height: 80.56px;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #22B573;
-    height: 80.56px;
-    padding: 0;
     box-sizing: border-box;
     position: fixed;
-    /* 고정 위치 설정 */
     top: 0;
-    /* 화면 상단에 고정 */
     left: 50%;
     transform: translateX(-50%);
-    /* 가로 가운데 정렬 */
     z-index: 1000;
-    /* 다른 콘텐츠 위에 위치하도록 설정 */
 }
+
 
 .header-top .cta,
 .header-top .cta-strong,
@@ -126,8 +122,10 @@
     justify-content: center;
     gap: 2px;
     font-family: 'Paperlogy-5', sans-serif;
-    margin: 80.56px auto 0;
-    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-top: 80.56px;
     z-index: 999;
 }
 
@@ -191,10 +189,9 @@
 @media (max-width: 1200px) {
     .nav-bar {
         flex-wrap: wrap;
-        /* 줄바꿈 활성화 */
         justify-content: center;
         height: auto;
-        padding: 10px 0;
+        min-height: 62.22px;
     }
 
     .title-icon {
@@ -230,23 +227,41 @@
     }
 }
 
-@media (max-width: 768px) {
-    .nav-bar {
-        display: flex; /* display: none 제거, flex 유지 */
-        padding: 10px 0;
-        flex-wrap: wrap;
-        height: auto; /* 높이 자동 조정 */
+@media (max-width: 810px) {
+    .header-top {
+        position: fixed;
+        width: 100%;
+        height: 80.56px;
+        margin: 0;
+        padding: 0;
     }
 
+    nav-bar {
+        width: 100%;
+        height: auto;
+        min-height: 62.22px;
+        margin: 0;
+        padding: 0;
+        margin-top: 80.56px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background: #F0F0F0;
+    }
     .nav-item {
         margin: 4px;
     }
 
-    .title-icon {
+    .title-icon2 {
         margin-right: 10px;
         margin-left: 10px;
         max-width: 60px;
         /* 작은 화면에서 적절한 최대 너비 */
+    }
+
+    .title-icon {
+        padding: 5px 0;
+        /* 대신 적절한 패딩 추가 */
     }
 
     .title-icon img {
@@ -254,6 +269,13 @@
         height: auto;
         object-fit: contain;
     }
+
+    .nav-items-wrapper {
+        margin: 0;
+        padding: 5px 0;
+        /* 내부 요소들에 패딩 추가 */
+    }
+
 
     .nav-items-wrapper .nav-item {
         font-size: 16px;
@@ -2585,7 +2607,8 @@
 
 /* 모바일 메뉴 컨테이너 */
 .menu-icon {
-    display: none; /* 다시 none으로 변경 */
+    display: none;
+    /* 다시 none으로 변경 */
     position: fixed;
     top: 25px;
     left: 40px;
@@ -2603,7 +2626,7 @@
     width: 250px;
     height: 100vh;
     background-color: #FFFFFF;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease;
     z-index: 1000;
     padding-top: 150px;
@@ -2641,7 +2664,7 @@
 
 /* 810px 이하에서 적용될 스타일 */
 @media (max-width: 810px) {
-    
+
 
     .menu-icon {
         display: none;
@@ -2649,27 +2672,25 @@
 
     .nav-items-wrapper .icon {
         display: none;
-}
+    }
 
-.header-top {
-    position: relative; /* icon 배치를 위한 기준점 설정 */
-}
-
-/* header-top 안의 icon 스타일 */
-.header-top .icon {
-    position: absolute;
-    right: 40px; /* 오른쪽 여백 */
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
-    width: 24px;
-    height: 24px;
-    z-index: 1002;
-}
+ 
+    /* header-top 안의 icon 스타일 */
+    /* header-top 안의 icon 위치 조정 */
+    .header-top .icon {
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+        width: 24px;
+        height: 24px;
+        display: block;
+    }
 }
 
 
-@media (min-width: 811px) {
+@media (min-width: 810px) {
     .menu-icon {
         top: 25px;
         /* header-top 내에서의 위치 */
