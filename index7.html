@@ -77,7 +77,7 @@
                 <h1 class="form-title">법적 최대 지원금 보장<br>휴대폰 최저 가격 확인하기</h1>
                 <p class="form-description">원하시는 휴대폰 상품을 선택해 주세요.</p>
 
-                <form action="http://3.19.206.106:5000/api/submit-consultation" method="POST">
+                <form id="consultation-form" method="POST" action="http://3.19.206.106:5000/api/submit-consultation">
                     <label for="current-provider" class="form-label">현재 통신사</label>
                     <select id="current-provider" name="current_carrier" class="form-select"
                         onchange="toggleCustomInput(this, 'current-custom-input')">
