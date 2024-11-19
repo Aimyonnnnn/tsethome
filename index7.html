@@ -78,9 +78,8 @@
                 <p class="form-description">원하시는 휴대폰 상품을 선택해 주세요.</p>
 
                 <form action="http://3.19.206.106:5000/api/submit-consultation" method="POST">
-
                     <label for="current-provider" class="form-label">현재 통신사</label>
-                    <select id="current-provider" name="current-provider" class="form-select"
+                    <select id="current-provider" name="current_carrier" class="form-select"
                         onchange="toggleCustomInput(this, 'current-custom-input')">
                         <option value="" disabled selected>현재 통신사를 선택해 주세요.</option>
                         <option value="SK">SK</option>
@@ -89,12 +88,11 @@
                         <option value="알뜰폰">알뜰폰</option>
                         <option value="기타">기타 입력</option>
                     </select>
-                    <!-- 추가된 입력란 -->
-                    <input type="text" id="current-custom-input" name="current-custom-input" class="form-input hidden"
+                    <input type="text" id="current-custom-input" name="current_custom_input" class="form-input hidden"
                         placeholder="기타 입력 - 직접 입력해 주세요.">
-
+                
                     <label for="desired-provider" class="form-label">사용 희망 통신사</label>
-                    <select id="desired-provider" name="desired-provider" class="form-select"
+                    <select id="desired-provider" name="desired_carrier" class="form-select"
                         onchange="toggleCustomInput(this, 'desired-custom-input')">
                         <option value="" disabled selected>사용 희망 통신사를 선택해 주세요.</option>
                         <option value="SK">SK</option>
@@ -103,32 +101,29 @@
                         <option value="알뜰폰">알뜰폰</option>
                         <option value="기타">기타 입력</option>
                     </select>
-                    <input type="text" id="desired-custom-input" name="desired-custom-input" class="form-input hidden"
+                    <input type="text" id="desired-custom-input" name="desired_custom_input" class="form-input hidden"
                         placeholder="기타 입력 - 직접 입력해 주세요.">
-
-
+                
                     <label for="desired-model" class="form-label">개통 희망 기종</label>
-                    <input type="text" id="desired-model" name="desired-model"
+                    <input type="text" id="desired-model" name="desired_phone"
                         placeholder="원하시는 기종을 적어주세요. ex) 아이폰 15pro" class="form-input">
-
+                
                     <label for="additional-request" class="form-label">기타 요청 사항</label>
-                    <textarea id="additional-request" name="additional-request"
+                    <textarea id="additional-request" name="additional_notes"
                         placeholder="추가로 상담 받고 싶은 내용이 있다면 적어주세요." class="form-textarea"></textarea>
-
+                
                     <label for="contact-number" class="form-label2">연락처</label>
-                    <input type="tel" id="contact-number" name="contact-number" placeholder="휴대폰 번호를 입력해 주세요."
-                        class="form-input">
-
+                    <input type="tel" id="contact-number" name="contact" placeholder="휴대폰 번호를 입력해 주세요." class="form-input">
+                
                     <label for="terms" class="form-label">약관을 확인해 주세요.</label>
                     <div class="form-checkbox-container">
-                        <input type="checkbox" id="terms" name="terms" class="form-checkbox">
+                        <input type="checkbox" id="terms" name="terms" class="form-checkbox" required>
                         <label for="terms" class="form-checkbox-label">전체 동의합니다.</label>
                     </div>
-
+                
                     <button type="submit" class="form-submit-button">상담 예약</button>
                 </form>
             </div>
-        </div>
 
         <div class="consult-container">
             <div class="kt-consult-box">
