@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>관리자 대시보드</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        * { box-sizing: border-box; }
-        
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -41,7 +44,8 @@
             background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
         .action-bar {
@@ -55,6 +59,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 14px;
         }
 
         .btn-excel {
@@ -72,7 +77,8 @@
             border-collapse: collapse;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 12px;
             text-align: left;
@@ -86,38 +92,144 @@
             background: #f9f9f9;
         }
 
-        .checkbox-cell {
-            width: 30px;
-            text-align: center;
+        /* 이미지 관리 스타일 */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
         }
 
-        @media (max-width: 768px) {
-            .table-responsive {
-                overflow-x: auto;
-            }
+        .image-item {
+            position: relative;
+        }
+
+        .image-preview {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .image-name-input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .image-location {
+            color: #666;
+            font-size: 14px;
+            margin: 10px 0;
+            padding: 5px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .image-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .file-input-wrapper {
+            margin-bottom: 10px;
+        }
+
+        .current-file {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .file-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .update-btn {
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .update-btn:hover {
+            background: #0056b3;
+        }
+
+        .section-title {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #000;
+            z-index: 100;
+        }
+
+        .name-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .edit-name-btn {
+            padding: 5px 10px;
+            cursor: pointer;
         }
     </style>
 </head>
+
 <body>
-    <div class="navbar">
+    <nav class="navbar">
         <a href="#consultations" class="nav-item active">상담 신청 목록</a>
-        <a href="#menu" class="nav-item">메뉴 수정</a>
+        <a href="#menu" class="nav-item">이미지 수정</a>
         <a href="/admin/logout" class="nav-item" style="margin-left: auto;">로그아웃</a>
-    </div>
+    </nav>
 
     <div class="container">
-        <div id="consultations" class="content">
+        <div id="consultations" class="content tab-content active">
             <div class="action-bar">
-                <button class="btn btn-excel" onclick="exportToExcel()">Excel 저장</button>
-                <button class="btn btn-delete" onclick="deleteSelected()">선택 삭제</button>
+                <button onclick="exportToExcel()">Excel 저장</button>
+                <button onclick="deleteSelected()">선택 삭제</button>
             </div>
             <div class="table-responsive">
                 <table>
                     <thead>
                         <tr>
-                            <th class="checkbox-cell">
-                                <input type="checkbox" id="selectAll" onclick="toggleAll()">
-                            </th>
+                            <th><input type="checkbox" id="selectAll" onchange="toggleAll()"></th>
                             <th>ID</th>
                             <th>현재 통신사</th>
                             <th>희망 통신사</th>
@@ -130,9 +242,7 @@
                     <tbody>
                         {% for consultation in consultations %}
                         <tr>
-                            <td class="checkbox-cell">
-                                <input type="checkbox" name="select" value="{{ consultation[0] }}">
-                            </td>
+                            <td><input type="checkbox" name="select" value="{{ consultation[0] }}"></td>
                             <td>{{ consultation[0] }}</td>
                             <td>{{ consultation[1] }}</td>
                             <td>{{ consultation[2] }}</td>
@@ -146,9 +256,56 @@
                 </table>
             </div>
         </div>
+
+        <div id="menu" class="content tab-content">
+            <h2 class="section-title">이미지 관리</h2>
+            <div class="image-grid">
+                {% for image in images %}
+                <div class="image-item">
+                    <div class="close-btn" onclick="deleteImage(this)">×</div>
+                    <div class="image-preview">
+                        <div class="name-container">
+                            <input type="text" class="image-name-input" value="{{ image.name }}"
+                                onchange="updateImageName('{{ image.path.split('/')[-1] }}', this.value)">
+                        </div>
+                        <img src="https://society-images-storage.s3.amazonaws.com{{ image.path }}"
+                            alt="{{ image.name }}">
+                    </div>
+                    <div class="image-controls">
+                        <div class="file-input-wrapper">
+                            <label class="current-file">현재 파일: {{ image.path.split('/')[-1] }}</label>
+                            <input type="file" accept="image/*" class="file-input" onchange="previewImage(this)">
+                        </div>
+                        <button class="update-btn" onclick="createNewImage(this)">이미지 업데이트</button>
+                    </div>
+                </div>
+                {% endfor %}
+                <button id="addImageBox" class="add-image-btn" onclick="addImageBox()">이미지 추가</button>
+            </div>
+        </div>
     </div>
 
     <script>
+        // 탭 전환
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                // 활성 탭 스타일 변경
+                document.querySelectorAll('.nav-item').forEach(nav => {
+                    nav.classList.remove('active');
+                });
+                this.classList.add('active');
+
+                // 컨텐츠 전환
+                const target = this.getAttribute('href').substring(1);
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(target).classList.add('active');
+            });
+        });
+
+        // 체크박스 관련 함수
         function toggleAll() {
             const checkboxes = document.getElementsByName('select');
             const selectAll = document.getElementById('selectAll');
@@ -156,12 +313,18 @@
         }
 
         function getSelectedIds() {
-            const checkboxes = document.getElementsByName('select');
-            return Array.from(checkboxes)
+            return Array.from(document.getElementsByName('select'))
                 .filter(cb => cb.checked)
                 .map(cb => cb.value);
         }
 
+        // Excel 내보내기
+        function exportToExcel() {
+            const ids = getSelectedIds();
+            window.location.href = `/admin/export-excel${ids.length > 0 ? '?ids=' + ids.join(',') : ''}`;
+        }
+
+        // 삭제 함수
         function deleteSelected() {
             const ids = getSelectedIds();
             if (ids.length === 0) {
@@ -177,21 +340,192 @@
                     },
                     body: JSON.stringify({ ids })
                 })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        location.reload();
-                    } else {
-                        alert('삭제 중 오류가 발생했습니다.');
-                    }
-                });
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            location.reload();
+                        } else {
+                            alert('삭제 중 오류가 발생했습니다.');
+                        }
+                    });
             }
         }
 
-        function exportToExcel() {
-            const ids = getSelectedIds();
-            window.location.href = `/admin/export-excel${ids.length > 0 ? '?ids=' + ids.join(',') : ''}`;
+        // 이미지 미리보기
+        function previewImage(input, imageId) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    input.closest('.image-item').querySelector('img').src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // 이미지 이름 업데이트
+        function updateImageName(imageId, newName) {
+            fetch(`/admin/update-image-name/${imageId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: newName })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('이미지 이름이 업데이트되었습니다.');
+                    } else {
+                        alert('이미지 이름 업데이트에 실패했습니다.');
+                    }
+                });
+        }
+
+        // 이미지 업데이트
+        function updateImage(imageId, event) {
+            const fileInput = event.target.closest('.image-item').querySelector('.file-input');
+            const currentFileName = event.target.closest('.image-item').querySelector('.current-file').textContent.split(': ')[1];
+
+            if (!fileInput.files[0]) {
+                alert('새 이미지를 선택해주세요.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('image', fileInput.files[0]);
+
+            fetch(`/admin/update-image/${currentFileName}`, {  // 현재 파일 이름 사용
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        alert('이미지가 성공적으로 업데이트되었습니다.');
+                        if (data.url) {
+                            const imgElement = event.target.closest('.image-item').querySelector('img');
+                            imgElement.src = data.url + '?t=' + new Date().getTime();
+                        }
+                    } else {
+                        throw new Error(data.error || '이미지 업데이트 실패');
+                    }
+                })
+                .catch(error => {
+                    alert('오류가 발생했습니다: ' + error.message);
+                    console.error('Error:', error);
+                });
+        }
+
+    </script>
+
+    <script>
+        let imageCount = 1; // 현재 표시된 이미지 수 추적
+
+        function addImageBox() {
+            const imageGrid = document.querySelector('.image-grid');
+            const newBox = document.createElement('div');
+            newBox.className = 'image-item';
+            newBox.innerHTML = `
+         <div class="close-btn" onclick="confirmDelete(this)">×</div>
+         <div class="image-preview">
+           <div class="name-container">
+               <input type="text" class="image-name-input" id="image_name" placeholder="이미지 이름">
+           </div>
+           <img src="" alt="미리보기">
+         </div>
+         <div class="image-controls">
+           <div class="file-input-wrapper">
+               <label class="current-file">새 파일 선택</label>
+               <input type="file" accept="image/*" class="file-input" onchange="previewImage(this)">
+           </div>
+           <button class="update-btn" onclick="createNewImage(this)">이미지 등록</button>
+         </div>
+          `;
+            imageGrid.insertBefore(newBox, document.querySelector('.add-image-btn'));
+        }
+
+        function confirmDelete(closeBtn) {
+            if (confirm('정말로 삭제하시겠습니까?')) {
+                closeBtn.closest('.image-item').remove();
+            }
+        }
+
+        function editImageName(button) {
+            const container = button.closest('.name-container');
+            const input = container.querySelector('.image-name-input');
+            const currentName = input.value;
+
+            const newName = prompt('새 이름을 입력하세요:', currentName);
+            if (newName && newName !== currentName) {
+                input.value = newName;
+            }
+        }
+
+        function createNewImage(button) {
+            const container = button.closest('.image-item');
+            const fileInput = container.querySelector('.file-input');
+            const nameInput = container.querySelector('.image-name-input');
+            const currentName = nameInput.value;
+
+            if (!fileInput.files[0]) {
+                alert('파일을 선택해주세요.');
+                return;
+            }
+            if (!currentName) {
+                alert('이미지 이름을 입력해주세요.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('image', fileInput.files[0]);
+            formData.append('name', currentName);
+
+            fetch('/admin/create-image', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('이미지가 등록되었습니다.');
+                        nameInput.value = currentName;  // 이름 유지
+                    } else {
+                        throw new Error(data.error || '이미지 등록 실패');
+                    }
+                })
+                .catch(error => {
+                    alert('오류가 발생했습니다: ' + error.message);
+                });
+        }
+
+        function deleteImage(element) {
+            const imageItem = element.closest('.image-item');
+            const filename = imageItem.querySelector('img').src.split('/').pop().split('?')[0];
+
+            if (confirm('정말로 이 이미지를 삭제하시겠습니까?')) {
+                fetch(`/admin/delete-image/${filename}`, {
+                    method: 'POST'
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            imageItem.remove();  // DOM에서 이미지 항목 제거
+                            alert('이미지가 삭제되었습니다.');
+                        } else {
+                            throw new Error(data.error || '이미지 삭제 실패');
+                        }
+                    })
+                    .catch(error => {
+                        alert('오류가 발생했습니다: ' + error.message);
+                    });
+            }
         }
     </script>
 </body>
+
 </html>
