@@ -59,7 +59,7 @@
     box-sizing: border-box;
 }
 
-.header-top {
+.header-top1 {
     width: 100%;
     max-width: 1920px;
     height: 80.56px;
@@ -74,6 +74,23 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.header-top {
+    width: 100%; /* 화면 전체 너비 */
+    height: 80.56px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #22B573;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0; /* 가운데 정렬 불필요 */
+    transform: none; /* transform 제거 */
     z-index: 1000;
 }
 
@@ -234,6 +251,32 @@
         height: 80.56px;
         margin: 0;
         padding: 0;
+    }
+
+    /* 숨길 텍스트 */
+    .header-top .cta,
+    .header-top .cta-strong,
+    .header-top .arrow {
+        display: none;
+    }
+
+    /* 이미지를 정가운데 배치 */
+    .header-top img {
+        position: absolute; /* 부모 요소 내에서 절대 위치 설정 */
+        left: 50%; /* 부모의 가로 중심 */
+        transform: translateX(-50%); /* 가운데 정렬 */
+        width: 200px; /* 이미지 크기 조정 */
+        content: url('/Coding/webcode/web/img/title-icon.png'); /* 모바일용 이미지로 변경 */
+    }
+
+    /* 네비게이션 바 숨기기 */
+    .nav-bar {
+        display: none;
+    }
+
+    /* 본문 내용이 헤더 아래로 내려가도록 마진 추가 */
+    body {
+        margin-top: 60px;
     }
 
     nav-bar {
