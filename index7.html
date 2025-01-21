@@ -18,10 +18,11 @@
             <span class="cta">숨은 지원금</span>
             <a href="index7.html" class="cta-strong">지금 확인하기</a>
             <div class="arrow">></div>
-            <img src="img/login.png" alt="User Icon" class="icon"> <!-- 추가 -->
+            <a href="/admin/login">
+                <img src="img/login.png" alt="User Icon" class="icon"> <!-- 추가 -->
+            </a> <!-- 추가 -->
 
         </div>
-
 
         <img src="img/menuicon.png" alt="Menu" class="menu-icon" id="menuToggle">
         <div class="mobile-menu" id="mobileMenu">
@@ -35,6 +36,7 @@
             </div>
         </div>
 
+
         <!-- Navigation Bar -->
         <div class="nav-bar">
             <a href="index.html" class="title-icon">
@@ -47,40 +49,19 @@
                 <a href="index4.html" class="nav-item">교육&엔터</a>
                 <a href="index5.html" class="nav-item">장애인 채용 컨설팅</a>
                 <a href="index6.html" class="nav-item">회사 소개</a>
-                <img src="img/login.png" alt="User Icon" class="icon">
+                <a href="/admin/login">
+                    <img src="img/login.png" alt="User Icon" class="icon"> <!-- 추가 -->
+                </a> <!-- 추가 -->
             </div>
         </div>
-
-        <div class="slider">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide ss1"></div>
-                    <div class="swiper-slide ss2"></div>
-                    <div class="swiper-slide ss3"></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-        </div>
-
-
-
-
-
-
-
 
         <div class="form-body">
-
             <div class="form-container">
                 <h1 class="form-title">법적 최대 지원금 보장<br>휴대폰 최저 가격 확인하기</h1>
                 <p class="form-description">원하시는 휴대폰 상품을 선택해 주세요.</p>
-
                 <form id="consultation-form">
                     <label for="current-provider" class="form-label">현재 통신사</label>
-                    <select id="current-provider" name="current_carrier" class="form-select"
-                        onchange="toggleCustomInput(this, 'current-custom-input')">
+                    <select id="current-provider" name="current_carrier" class="form-select">
                         <option value="" disabled selected>현재 통신사를 선택해 주세요.</option>
                         <option value="SK">SK</option>
                         <option value="LG">LG</option>
@@ -90,10 +71,9 @@
                     </select>
                     <input type="text" id="current-custom-input" name="current_custom_input" class="form-input hidden"
                         placeholder="기타 입력 - 직접 입력해 주세요.">
-                
+
                     <label for="desired-provider" class="form-label">사용 희망 통신사</label>
-                    <select id="desired-provider" name="desired_carrier" class="form-select"
-                        onchange="toggleCustomInput(this, 'desired-custom-input')">
+                    <select id="desired-provider" name="desired_carrier" class="form-select">
                         <option value="" disabled selected>사용 희망 통신사를 선택해 주세요.</option>
                         <option value="SK">SK</option>
                         <option value="LG">LG</option>
@@ -103,168 +83,70 @@
                     </select>
                     <input type="text" id="desired-custom-input" name="desired_custom_input" class="form-input hidden"
                         placeholder="기타 입력 - 직접 입력해 주세요.">
-                
+
                     <label for="desired-model" class="form-label">개통 희망 기종</label>
                     <input type="text" id="desired-model" name="desired_phone"
                         placeholder="원하시는 기종을 적어주세요. ex) 아이폰 15pro" class="form-input">
-                
+
                     <label for="additional-request" class="form-label">기타 요청 사항</label>
-                    <textarea id="additional-request" name="additional_notes"
-                        placeholder="추가로 상담 받고 싶은 내용이 있다면 적어주세요." class="form-textarea"></textarea>
-                
-                    <label for="contact-number" class="form-label2">연락처</label>
-                    <input type="tel" id="contact-number" name="contact" placeholder="휴대폰 번호를 입력해 주세요." class="form-input">
-                
+                    <textarea id="additional-request" name="additional_notes" placeholder="추가로 상담 받고 싶은 내용이 있다면 적어주세요."
+                        class="form-textarea"></textarea>
+
+                    <label for="contact-number" class="form-label">연락처</label>
+                    <input type="tel" id="contact-number" name="contact" placeholder="휴대폰 번호를 입력해 주세요."
+                        class="form-input">
+
                     <label for="terms" class="form-label">약관을 확인해 주세요.</label>
                     <div class="form-checkbox-container">
                         <input type="checkbox" id="terms" name="terms" class="form-checkbox" required>
                         <label for="terms" class="form-checkbox-label">전체 동의합니다.</label>
                     </div>
-                
+
                     <button type="submit" class="form-submit-button">상담 예약</button>
                 </form>
             </div>
-
-        <div class="consult-container">
-            <div class="kt-consult-box">
-                <h2 class="consult-title">쉽고 간편한 KT상담</h2>
-                <button class="consult-button blue">상담 문의 남기기</button>
-                <button class="consult-button yellow">실시간 카카오톡</button>
-                <div class="consult-image">
-                    <!-- 이미지가 들어갈 자리 -->
-                </div>
-                <div class="consult-footer">고객센터 <strong>1899-9999</strong></div>
-                <button class="consult-arrow">></button>
-            </div>
-            <button class="show-arrow">
-                <</button> <!-- 새로운 화살표 버튼 -->
-
         </div>
 
-
-
+        <!-- 추가된 JavaScript 코드 -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const form = document.getElementById("consultation-form");
+            
+                form.addEventListener("submit", async function (event) {
+                    event.preventDefault();
+            
+                    const formData = new FormData(form);
+                    const jsonData = {};
+                    formData.forEach((value, key) => {
+                        jsonData[key] = value;
+                    });
+            
+                    try {
+                        const response = await fetch("/api/submit-consultation", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(jsonData)
+                        });
+            
+                        if (response.ok) {
+                            alert('상담 신청이 완료되었습니다.\n빠른 연락 드리겠습니다.');
+                            form.reset();
+                            event.stopPropagation();
+                            return false;
+                        } else {
+                            const errorData = await response.json();
+                            throw new Error(errorData.error || "상담 신청에 실패했습니다.");
+                        }
+                    } catch (error) {
+                        alert(error.message);
+                        event.stopPropagation();
+                    }
+                });
+            });
+            </script>
     </div>
-
-    <script src="http://3.19.206.106:5000/js/form-handler.js"></script>
-
-
-
-    <script>document.addEventListener("DOMContentLoaded", function () {
-        const consultBox = document.querySelector('.kt-consult-box');
-        const consultArrow = document.querySelector('.consult-arrow');
-        const showArrow = document.querySelector('.show-arrow');
-
-        // 초기 상태: 컨설트 박스 보임, 새로운 화살표 숨김
-        consultArrow.addEventListener('click', () => {
-            consultBox.style.display = 'none';
-            showArrow.style.display = 'block';
-        });
-
-        showArrow.addEventListener('click', () => {
-            consultBox.style.display = 'block';
-            showArrow.style.display = 'none';
-        });
-
-
-    });
-
-
-
-</script>
-
-
-
-    <script>
-        function toggleCustomInput(selectElement, inputId) {
-            const inputElement = document.getElementById(inputId);
-            if (selectElement.value === "기타") {
-                inputElement.classList.remove('hidden');
-                inputElement.focus();
-            } else {
-                inputElement.classList.add('hidden');
-                inputElement.value = '';
-            }
-        }
-    </script>
-
-    <script src="js/jquery.min_1.12.4.js"></script>
-    <script src="js/modernizr-custom.js"></script>
-    <script src="js/ie-checker.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script>
-        // Swiper 초기화
-        var mySwiper = new Swiper('.swiper-container', {
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-            },
-            autoplay: {
-                delay: 1000,
-            },
-        });
-    </script>
-
-
-
-
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuToggle = document.getElementById('menuToggle');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const navBar = document.querySelector('.nav-bar');
-            let navBarPosition = navBar.offsetTop;
-
-            // 햄버거 메뉴 위치 조정 함수
-            function adjustMenuPosition() {
-                const headerTop = document.querySelector('.header-top');
-                if (window.innerWidth > 1920) {
-                    const headerLeft = headerTop.getBoundingClientRect().left;
-                    menuToggle.style.left = `${headerLeft + 40}px`;
-                } else {
-                    menuToggle.style.left = '10px';
-                }
-            }
-
-            // 스크롤 이벤트 처리
-            window.addEventListener('scroll', function () {
-                if (window.pageYOffset > (navBarPosition + navBar.offsetHeight)) {
-                    menuToggle.style.display = 'block';
-                    adjustMenuPosition(); // 스크롤 시 위치 조정
-                } else {
-                    menuToggle.style.display = 'none';
-                    mobileMenu.classList.remove('active');
-                }
-            });
-
-            // 리사이즈 이벤트에 대한 위치 조정
-            window.addEventListener('resize', adjustMenuPosition);
-
-            // 초기 위치 설정
-            adjustMenuPosition();
-
-            // 메뉴 토글
-            menuToggle.addEventListener('click', function () {
-                mobileMenu.classList.toggle('active');
-                if (mobileMenu.classList.contains('active')) {
-                    mobileMenu.style.display = 'block';
-                }
-            });
-
-            // 메뉴 외부 클릭시 닫기
-            document.addEventListener('click', function (event) {
-                if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-                    mobileMenu.classList.remove('active');
-                }
-            });
-        });
-
-
-    </script>
 </body>
+
+</html>
