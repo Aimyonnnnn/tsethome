@@ -35,13 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify(formData)
             });
-
+        
+            const responseData = await response.json(); // 응답 데이터를 먼저 읽음
+            
             if (response.ok) {
-                alert('상담 신청이 완료되었습니다.');
+                alert('상담 신청이 완료되었습니다.\n빠른 연락 드리겠습니다.');
                 form.reset();
+                return false; // 추가: 기본 동작 중단
             } else {
-                const errorData = await response.json();
-                alert(`오류가 발생했습니다: ${errorData.error}`);
+                alert(`오류가 발생했습니다: ${responseData.error}`);
             }
         } catch (error) {
             console.error('Error:', error);
